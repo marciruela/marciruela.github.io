@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="140" height="140" viewBox="0 0 140 140" role="img">
+  <title>Mar Ciruela — Logo principal</title>
+  <desc>Monograma MC con esquinas ornamentales doradas</desc>
+  <rect width="140" height="140" fill="#0a0a0a"/>
+  <line x1="20" y1="20" x2="38" y2="20" stroke="#c8a96e" stroke-width="0.8"/>
+  <line x1="20" y1="20" x2="20" y2="38" stroke="#c8a96e" stroke-width="0.8"/>
+  <line x1="120" y1="20" x2="102" y2="20" stroke="#c8a96e" stroke-width="0.8"/>
+  <line x1="120" y1="20" x2="120" y2="38" stroke="#c8a96e" stroke-width="0.8"/>
+  <line x1="20" y1="120" x2="38" y2="120" stroke="#c8a96e" stroke-width="0.8"/>
+  <line x1="20" y1="120" x2="20" y2="102" stroke="#c8a96e" stroke-width="0.8"/>
+  <line x1="120" y1="120" x2="102" y2="120" stroke="#c8a96e" stroke-width="0.8"/>
+  <line x1="120" y1="120" x2="120" y2="102" stroke="#c8a96e" stroke-width="0.8"/>
+  <text x="70" y="84" font-family="Cormorant Garamond, Georgia, serif" font-size="62" font-weight="300" font-style="italic" fill="#c8a96e" text-anchor="middle" letter-spacing="-5">MC</text>
+</svg>

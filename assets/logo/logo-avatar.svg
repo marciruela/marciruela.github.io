@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="140" height="140" viewBox="0 0 140 140" role="img">
+  <title>Mar Ciruela — Avatar sello circular</title>
+  <desc>Monograma MC con sello circular y texto alrededor</desc>
+  <rect width="140" height="140" fill="#0a0a0a"/>
+  <circle cx="70" cy="70" r="56" fill="none" stroke="#c8a96e" stroke-width="0.7"/>
+  <circle cx="70" cy="70" r="48" fill="none" stroke="#c8a96e" stroke-width="0.3" stroke-opacity="0.4"/>
+  <text x="70" y="82" font-family="Cormorant Garamond, Georgia, serif" font-size="54" font-weight="300" font-style="italic" fill="#c8a96e" text-anchor="middle" letter-spacing="-4">MC</text>
+  <path id="topArc" d="M 20 70 A 50 50 0 0 1 120 70" fill="none"/>
+  <path id="botArc" d="M 22 76 A 50 50 0 0 0 118 76" fill="none"/>
+  <text font-family="DM Mono, monospace" font-size="8" fill="#c8a96e" fill-opacity="0.6" letter-spacing="3">
+    <textPath href="#topArc" startOffset="8%">MAR CIRUELA · PORTFOLIO</textPath>
+  </text>
+  <text font-family="DM Mono, monospace" font-size="7.5" fill="#c8a96e" fill-opacity="0.45" letter-spacing="2.5">
+    <textPath href="#botArc" startOffset="10%">FOTOGRAFÍA · DISEÑO · DRON</textPath>
+  </text>
+</svg>

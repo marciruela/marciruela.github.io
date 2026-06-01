@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio de María del Mar Ciruela — Fotografía, Diseño gráfico, Desarrollo web ASP.NET MVC y Piloto de dron.">
+  <meta name="author" content="María del Mar Ciruela">
+  <meta property="og:title" content="Mar Ciruela — Portfolio">
+  <meta property="og:description" content="Fotografía · Diseño · Desarrollo · Dron">
+  <meta property="og:image" content="assets/logo/logo-main.svg">
+  <title>Mar Ciruela — Portfolio</title>
+  <link rel="icon" type="image/svg+xml" href="assets/logo/logo-main.svg">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <a href="#home" class="nav-logo">
+    <img src="assets/logo/logo-main.svg" alt="Logo Mar Ciruela">
+    <span class="nav-logo-text">Mar <span>Ciruela</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">Sobre mí</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#dron">Dron</a></li>
+    <li><a href="#contact">Contacto</a></li>
+  </ul>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-tag fade-up delay-1">Portfolio creativo</div>
+  <h1 class="hero-name fade-up delay-2">
+    <span class="first">María del Mar</span>
+    <span class="last">Ciruela</span>
+    <span class="brand">Mar Ciruela — Fotografía · Diseño · Desarrollo · Dron</span>
+  </h1>
+  <div class="hero-roles fade-up delay-3">
+    <span class="role-pill active">Fotografía</span>
+    <span class="role-pill">Diseño gráfico</span>
+    <span class="role-pill">Diseño web</span>
+    <span class="role-pill">Desarrollo ASP.NET</span>
+    <span class="role-pill">Piloto de dron</span>
+  </div>
+  <div class="hero-scroll fade-up delay-4">Scroll</div>
+</section>
+
+<!-- ── SOBRE MÍ ── -->
+<section id="about">
+  <div class="section-label">01 — Sobre mí</div>
+  <h2 class="section-title">Donde el ojo <em>técnico</em><br>se encuentra con el arte</h2>
+  <div class="about-grid">
+    <p class="about-text">
+      Soy María del Mar Ciruela, creativa multidisciplinar con formación en fotografía, 
+      diseño gráfico publicitario y desarrollo web. Construyo proyectos donde la imagen 
+      y el código coexisten: desde una campaña visual hasta una aplicación funcional, 
+      pasando por las alturas con mi dron.
+    </p>
+    <div class="about-stats">
+      <div class="stat-cell">
+        <div class="stat-num">5</div>
+        <div class="stat-label">Disciplinas</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num">∞</div>
+        <div class="stat-label">Curiosidad</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num">MVC</div>
+        <div class="stat-label">ASP.NET</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num">↑</div>
+        <div class="stat-label">Piloto dron</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PORTFOLIO ── -->
+<section id="portfolio">
+  <div class="section-label">02 — Portfolio</div>
+  <h2 class="section-title">Trabajos <em>seleccionados</em></h2>
+
+  <div class="portfolio-filter">
+    <button class="filter-btn active" onclick="filterPortfolio(this,'all')">Todo</button>
+    <button class="filter-btn" onclick="filterPortfolio(this,'foto')">Fotografía</button>
+    <button class="filter-btn" onclick="filterPortfolio(this,'diseno')">Diseño</button>
+    <button class="filter-btn" onclick="filterPortfolio(this,'web')">Diseño web</button>
+    <button class="filter-btn" onclick="filterPortfolio(this,'dev')">Desarrollo</button>
+  </div>
+
+  <div class="portfolio-grid">
+
+    <!-- ITEM 1 — Fotografía (grande) -->
+    <div class="portfolio-item" data-cat="foto">
+      <div class="portfolio-placeholder">
+        <span class="ph-icon">📷</span>
+        <span class="ph-label">Fotografía · Próximamente</span>
+      </div>
+      <!-- Cuando tengas la foto, reemplaza el div.portfolio-placeholder por:
+      <img src="assets/img/foto-urbana.jpg" alt="Sesión urbana Madrid"> -->
+      <div class="portfolio-overlay">
+        <div class="overlay-cat">Fotografía</div>
+        <div class="overlay-title">Sesión urbana · Madrid</div>
+      </div>
+    </div>
+
+    <!-- ITEM 2 — Diseño gráfico -->
+    <div class="portfolio-item" data-cat="diseno">
+      <div class="portfolio-placeholder">
+        <span class="ph-icon">✦</span>
+        <span class="ph-label">Diseño gráfico · Próximamente</span>
+      </div>
+      <div class="portfolio-overlay">
+        <div class="overlay-cat">Diseño gráfico</div>
+        <div class="overlay-title">Identidad de marca</div>
+      </div>
+    </div>
+
+    <!-- ITEM 3 — Desarrollo ASP.NET -->
+    <div class="portfolio-item" data-cat="dev">
+      <div class="portfolio-placeholder">
+        <span class="ph-icon">⌨</span>
+        <span class="ph-label">ASP.NET MVC · Próximamente</span>
+      </div>
+      <div class="portfolio-overlay">
+        <div class="overlay-cat">Desarrollo ASP.NET MVC</div>
+        <div class="overlay-title">Aplicación de gestión</div>
+      </div>
+    </div>
+
+    <!-- ITEM 4 — Diseño web -->
+    <div class="portfolio-item" data-cat="web">
+      <div class="portfolio-placeholder">
+        <span class="ph-icon">◻</span>
+        <span class="ph-label">Diseño web · Próximamente</span>
+      </div>
+      <div class="portfolio-overlay">
+        <div class="overlay-cat">Diseño web</div>
+        <div class="overlay-title">Landing page · E-commerce</div>
+      </div>
+    </div>
+
+    <!-- ITEM 5 — Fotografía (grande) -->
+    <div class="portfolio-item" data-cat="foto">
+      <div class="portfolio-placeholder">
+        <span class="ph-icon">◎</span>
+        <span class="ph-label">Fotografía · Próximamente</span>
+      </div>
+      <div class="portfolio-overlay">
+        <div class="overlay-cat">Fotografía</div>
+        <div class="overlay-title">Retrato natural · Estudio</div>
+      </div>
+    </div>
+
+    <!-- ITEM 6 — Diseño gráfico -->
+    <div class="portfolio-item" data-cat="diseno">
+      <div class="portfolio-placeholder">
+        <span class="ph-icon">◈</span>
+        <span class="ph-label">Diseño gráfico · Próximamente</span>
+      </div>
+      <div class="portfolio-overlay">
+        <div class="overlay-cat">Diseño gráfico</div>
+        <div class="overlay-title">Cartel publicitario</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Tarjetas de categoría -->
+  <div class="categories">
+    <div class="cat-card">
+      <div class="cat-number">01</div>
+      <div class="cat-icon">📷</div>
+      <div class="cat-name">Fotografía</div>
+      <div class="cat-desc">Retrato, urbana, naturaleza y producto</div>
+    </div>
+    <div class="cat-card">
+      <div class="cat-number">02</div>
+      <div class="cat-icon">✦</div>
+      <div class="cat-name">Diseño gráfico</div>
+      <div class="cat-desc">Branding, cartelería y publicidad</div>
+    </div>
+    <div class="cat-card">
+      <div class="cat-number">03</div>
+      <div class="cat-icon">◻</div>
+      <div class="cat-name">Diseño web</div>
+      <div class="cat-desc">UI, landing pages y mockups</div>
+    </div>
+    <div class="cat-card">
+      <div class="cat-number">04</div>
+      <div class="cat-icon">⌨</div>
+      <div class="cat-name">Desarrollo</div>
+      <div class="cat-desc">Apps ASP.NET MVC en Visual Studio</div>
+    </div>
+    <div class="cat-card">
+      <div class="cat-number">05</div>
+      <div class="cat-icon">◎</div>
+      <div class="cat-name">Dron</div>
+      <div class="cat-desc">Vídeos aéreos y fotografía UAV</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── DRON ── -->
+<section id="dron">
+  <div class="section-label">03 — Dron</div>
+  <div class="dron-banner">
+    <div>
+      <div class="dron-badge">▲ Piloto UAV en formación</div>
+      <h2 class="dron-title">La perspectiva<br>que <em>cambia todo</em></h2>
+    </div>
+    <p class="dron-text">
+      Desde las alturas, el mundo revela geometrías ocultas y paisajes que el ojo nunca 
+      alcanza. Me estoy titulando como piloto de dron para añadir una dimensión 
+      completamente nueva a mi trabajo visual.
+    </p>
+  </div>
+
+  <!-- Vídeos de dron -->
+  <!-- Para añadir un vídeo de YouTube, sustituye el div.dron-video-cell por:
+  <div class="dron-video-cell">
+    <iframe src="https://www.youtube.com/embed/TU_ID_DE_VIDEO" allowfullscreen></iframe>
+  </div> -->
+  <div class="dron-video-grid">
+    <div class="dron-video-cell">
+      <div class="play-btn">▶</div>
+      <div class="dron-video-label">Vuelo urbano · Próximamente</div>
+    </div>
+    <div class="dron-video-cell">
+      <div class="play-btn">▶</div>
+      <div class="dron-video-label">Paisaje natural · Próximamente</div>
+    </div>
+    <div class="dron-video-cell">
+      <div class="play-btn">▶</div>
+      <div class="dron-video-label">Fotograma aéreo · Próximamente</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACTO ── -->
+<section id="contact">
+  <div class="section-label">04 — Contacto</div>
+  <div class="contact-grid">
+    <div>
+      <h2 class="contact-big">Hablemos de tu<br><em>próximo proyecto</em></h2>
+      <div class="contact-links">
+        <a class="contact-link" href="mailto:hola@marciruela.es">
+          <span class="contact-link-label">Email</span>
+          <span class="contact-link-val">hola@marciruela.es</span>
+          <span class="contact-link-arrow">→</span>
+        </a>
+        <a class="contact-link" href="https://linkedin.com/in/maria-del-mar-ciruela" target="_blank">
+          <span class="contact-link-label">LinkedIn</span>
+          <span class="contact-link-val">maria-del-mar-ciruela</span>
+          <span class="contact-link-arrow">→</span>
+        </a>
+        <a class="contact-link" href="https://github.com/marciruela" target="_blank">
+          <span class="contact-link-label">GitHub</span>
+          <span class="contact-link-val">marciruela</span>
+          <span class="contact-link-arrow">→</span>
+        </a>
+        <a class="contact-link" href="https://instagram.com/mar.ciruela" target="_blank">
+          <span class="contact-link-label">Instagram</span>
+          <span class="contact-link-val">@mar.ciruela</span>
+          <span class="contact-link-arrow">→</span>
+        </a>
+      </div>
+    </div>
+    <div class="contact-form">
+      <div class="form-row">
+        <input type="text" id="contact-name" placeholder="Tu nombre">
+      </div>
+      <div class="form-row">
+        <input type="email" id="contact-email" placeholder="Tu email">
+      </div>
+      <div class="form-row">
+        <textarea id="contact-message" rows="4" placeholder="Cuéntame tu proyecto..."></textarea>
+      </div>
+      <button class="send-btn" onclick="sendMessage()">
+        Enviar mensaje <span>→</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-name">María del Mar Ciruela</div>
+  <div class="footer-mono">Fotografía · Diseño · Desarrollo · Dron</div>
+  <div class="footer-mono">© 2025</div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
