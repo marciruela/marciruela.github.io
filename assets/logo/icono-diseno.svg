@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" fill="none">
+  <title>Diseño gráfico — Círculo cromático</title>
+  <circle cx="40" cy="40" r="28" stroke="#c8a96e" stroke-width="1.2"/>
+  <circle cx="40" cy="40" r="14" stroke="#c8a96e" stroke-width="1.2"/>
+  <circle cx="40" cy="40" r="4" stroke="#c8a96e" stroke-width="1.2"/>
+  <line x1="40" y1="12" x2="40" y2="26" stroke="#c8a96e" stroke-width="1"/>
+  <line x1="40" y1="54" x2="40" y2="68" stroke="#c8a96e" stroke-width="1"/>
+  <line x1="12" y1="40" x2="26" y2="40" stroke="#c8a96e" stroke-width="1"/>
+  <line x1="54" y1="40" x2="68" y2="40" stroke="#c8a96e" stroke-width="1"/>
+  <line x1="20" y1="20" x2="30" y2="30" stroke="#c8a96e" stroke-width="1"/>
+  <line x1="50" y1="50" x2="60" y2="60" stroke="#c8a96e" stroke-width="1"/>
+  <line x1="60" y1="20" x2="50" y2="30" stroke="#c8a96e" stroke-width="1"/>
+  <line x1="20" y1="60" x2="30" y2="50" stroke="#c8a96e" stroke-width="1"/>
+  <path d="M40 12 A28 28 0 0 1 68 40" stroke="#c8a96e" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M68 40 A28 28 0 0 1 54 65" stroke="#c8a96e" stroke-width="1.2" stroke-linecap="round"/>
+  <path d="M54 65 A28 28 0 0 1 12 40" stroke="#c8a96e" stroke-width="0.7" stroke-linecap="round"/>
+</svg>

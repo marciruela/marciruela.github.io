@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" fill="none">
+  <title>Drones — Horizonte cenital</title>
+  <circle cx="40" cy="40" r="30" stroke="#c8a96e" stroke-width="1.2"/>
+  <path d="M12 42 C18 34 28 30 40 30 C52 30 62 34 68 42" stroke="#c8a96e" stroke-width="1.2" stroke-linecap="round"/>
+  <path d="M16 48 C22 42 30 38 40 38 C50 38 58 42 64 48" stroke="#c8a96e" stroke-width="0.7" stroke-linecap="round" stroke-dasharray="3 2"/>
+  <circle cx="40" cy="26" r="5" stroke="#c8a96e" stroke-width="1.1"/>
+  <line x1="40" y1="21" x2="40" y2="13" stroke="#c8a96e" stroke-width="0.9" stroke-dasharray="2 2"/>
+  <line x1="36" y1="15" x2="40" y2="10" stroke="#c8a96e" stroke-width="1" stroke-linecap="round"/>
+  <line x1="44" y1="15" x2="40" y2="10" stroke="#c8a96e" stroke-width="1" stroke-linecap="round"/>
+  <circle cx="40" cy="56" r="7" stroke="#c8a96e" stroke-width="1"/>
+  <circle cx="40" cy="56" r="3" stroke="#c8a96e" stroke-width="1"/>
+</svg>
