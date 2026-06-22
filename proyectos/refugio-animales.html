@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Refugio Animales — Mar Ciruela</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300;1,400&family=DM+Mono:wght@300;400&family=Syne:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="../assets/logo/logo-main.svg">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg: #0a0a0a; --bg2: #111111; --bg3: #181818;
+      --border: rgba(255,255,255,0.07); --border2: rgba(255,255,255,0.14);
+      --text: #f0ede8; --muted: rgba(240,237,232,0.45);
+      --accent: #c8a96e; --accent2: #e8d5b0;
+      --font-display: 'Syne', sans-serif;
+      --font-serif: 'Cormorant Garamond', serif;
+      --font-mono: 'DM Mono', monospace;
+    }
+    body { background: var(--bg); color: var(--text); font-family: var(--font-display); }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 3rem; border-bottom: 0.5px solid var(--border); background: rgba(10,10,10,0.92); backdrop-filter: blur(16px); }
+    .nav-back { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; transition: color 0.2s; }
+    .nav-back:hover { color: var(--accent); }
+    .nav-logo { font-family: var(--font-serif); font-size: 1.2rem; font-weight: 300; color: var(--text); }
+    .nav-logo span { color: var(--accent); font-style: italic; }
+    .project-hero { padding: 7rem 3rem 3rem; border-bottom: 0.5px solid var(--border); }
+    .project-cat { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem; }
+    .project-cat::before { content: ''; display: block; width: 24px; height: 1px; background: var(--accent); }
+    .project-title { font-family: var(--font-serif); font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 300; line-height: 1; margin-bottom: 0.75rem; }
+    .project-title em { font-style: italic; color: var(--accent); }
+    .project-desc { font-family: var(--font-serif); font-size: 1.05rem; font-weight: 300; color: var(--muted); max-width: 640px; line-height: 1.6; margin-bottom: 1.5rem; }
+    .project-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .tag { font-family: var(--font-mono); font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); border: 0.5px solid rgba(200,169,110,0.4); background: rgba(200,169,110,0.08); padding: 0.32rem 0.75rem; border-radius: 100px; }
+
+    .server-notice { margin: 3rem 3rem 0; padding: 1.25rem 1.5rem; background: rgba(200,169,110,0.06); border: 0.5px solid rgba(200,169,110,0.25); border-radius: 6px; display: flex; align-items: flex-start; gap: 1rem; }
+    .server-notice-icon { color: var(--accent); font-family: var(--font-mono); font-size: 0.9rem; flex-shrink: 0; }
+    .server-notice-text { font-family: var(--font-mono); font-size: 0.66rem; line-height: 1.8; color: var(--muted); letter-spacing: 0.02em; }
+    .server-notice-text strong { color: var(--accent); }
+
+    .demo-section { padding: 3rem; }
+    .section-label { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem; }
+    .section-label::before { content: ''; display: block; width: 24px; height: 1px; background: var(--accent); }
+
+    .code-frame { background: var(--bg2); border: 0.5px solid var(--border2); border-radius: 10px; overflow: hidden; }
+    .code-bar { background: var(--bg3); padding: 0.75rem 1.25rem; display: flex; align-items: center; justify-content: space-between; border-bottom: 0.5px solid var(--border); }
+    .code-filename { font-family: var(--font-mono); font-size: 0.66rem; color: var(--muted); letter-spacing: 0.02em; }
+    .code-lang { font-family: var(--font-mono); font-size: 0.58rem; letter-spacing: 0.1em; color: var(--accent); text-transform: uppercase; }
+    .code-tabs { display: flex; gap: 1px; background: var(--border); }
+    .code-tab { flex: 1; padding: 0.6rem; text-align: center; background: var(--bg3); font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+    .code-tab.active { color: var(--accent); background: var(--bg2); }
+    .code-body { padding: 1.5rem; overflow-x: auto; }
+    .code-body pre { font-family: 'DM Mono', monospace; font-size: 0.72rem; line-height: 1.7; color: rgba(240,237,232,0.75); white-space: pre; }
+    .code-body .kw { color: #c792ea; }
+    .code-body .ty { color: #82aaff; }
+    .code-body .str { color: #c3e88d; }
+    .code-body .cm { color: rgba(240,237,232,0.35); font-style: italic; }
+    .code-body .an { color: #f78c6c; }
+
+    /* RECREACIÓN INTERFAZ REAL */
+    .aspx-window { background: #f5f7fa; font-family: 'Syne', sans-serif; }
+    .aspx-header { text-align: center; padding: 1.75rem 1.5rem 1.25rem; }
+    .aspx-header h2 { color: #2196F3; font-size: 1.5rem; font-weight: 700; margin-bottom: 0.4rem; }
+    .aspx-header p { color: #666; font-size: 0.8rem; }
+    .aspx-btn-add { display: inline-block; margin: 0 auto 1.5rem; padding: 0.6rem 1.25rem; background: #4CAF50; color: white; border-radius: 5px; font-size: 0.75rem; font-weight: 600; text-align: center; width: fit-content; }
+    .aspx-btn-wrap { display: flex; justify-content: center; }
+    .aspx-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; padding: 0 1.5rem 1.75rem; max-width: 1000px; margin: 0 auto; }
+    .aspx-card { background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.08); }
+    .aspx-card-img { width: 100%; aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; background: #e3f2fd; }
+    .aspx-card-body { padding: 1rem; }
+    .aspx-card-title { font-size: 0.95rem; font-weight: 700; color: #2d2d2d; margin-bottom: 0.3rem; }
+    .aspx-card-meta { font-size: 0.7rem; color: #777; margin-bottom: 0.6rem; }
+    .aspx-badge { display: inline-block; font-size: 0.62rem; padding: 0.25rem 0.6rem; border-radius: 100px; font-weight: 600; }
+    .badge-disponible { background: #e8f5e9; color: #2e7d32; }
+    .badge-adoptado { background: #fce4ec; color: #c2185b; }
+
+    .project-info { padding: 3rem; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; border-top: 0.5px solid var(--border); }
+    .info-block h3 { font-family: var(--font-serif); font-size: 1.6rem; font-weight: 300; margin-bottom: 1rem; }
+    .info-block h3 em { font-style: italic; color: var(--accent); }
+    .info-block p { font-family: var(--font-serif); font-size: 1.05rem; font-weight: 300; color: var(--muted); line-height: 1.8; }
+    .features { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+    .features li { font-family: var(--font-mono); font-size: 0.64rem; letter-spacing: 0.06em; color: var(--muted); padding: 0.65rem 0.9rem; background: var(--bg2); border-left: 2px solid var(--accent); }
+
+    .architecture { padding: 0 3rem 3rem; }
+    .arch-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); }
+    .arch-cell { background: var(--bg2); padding: 1.5rem; text-align: center; }
+    .arch-name { font-family: var(--font-serif); font-size: 1.1rem; font-weight: 300; color: var(--accent); }
+    .arch-desc { font-family: var(--font-mono); font-size: 0.56rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-top: 0.2rem; }
+
+    .project-nav { padding: 2rem 3rem 3rem; display: flex; justify-content: space-between; align-items: center; border-top: 0.5px solid var(--border); }
+    .project-nav a { font-family: var(--font-mono); font-size: 0.64rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .project-nav a:hover { color: var(--accent); }
+
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .project-hero { padding: 5rem 1.5rem 2rem; }
+      .server-notice { margin: 2rem 1.5rem 0; }
+      .demo-section, .architecture { padding: 2rem 1.5rem; }
+      .project-info { grid-template-columns: 1fr; gap: 1.5rem; padding: 2rem 1.5rem; }
+      .arch-grid, .aspx-cards { grid-template-columns: repeat(2, 1fr); }
+      .code-body { padding: 1rem; }
+      .code-body pre { font-size: 0.62rem; }
+      .project-nav { padding: 1.5rem; flex-direction: column; gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="../index.html#portfolio" class="nav-back">← Volver al portfolio</a>
+  <div class="nav-logo">Mar <span>Ciruela</span></div>
+</nav>
+
+<section class="project-hero">
+  <div class="project-cat">ASP.NET Core MVC · C#</div>
+  <h1 class="project-title">Refugio de <em>Animales</em></h1>
+  <p class="project-desc">Aplicación de gestión de un refugio de animales: listado de animales en adopción, ficha de adoptantes, proceso de adopción/desadopción y autenticación de usuarios, desarrollada con ASP.NET Core MVC y Entity Framework.</p>
+  <div class="project-tags">
+    <span class="tag">ASP.NET Core MVC</span>
+    <span class="tag">C#</span>
+    <span class="tag">Entity Framework</span>
+    <span class="tag">SQL Server</span>
+    <span class="tag">Data Annotations</span>
+    <span class="tag">Visual Studio</span>
+  </div>
+</section>
+
+<div class="server-notice">
+  <span class="server-notice-icon">i</span>
+  <span class="server-notice-text">
+    Esta aplicación corre sobre <strong>ASP.NET Core con servidor backend y base de datos SQL Server</strong>, por lo que no puede ejecutarse directamente en GitHub Pages.
+    A continuación se muestra una <strong>recreación fiel de su interfaz real</strong> junto con el código fuente del proyecto.
+    El repositorio completo estará disponible próximamente en GitHub para clonar y ejecutar en local con Visual Studio.
+  </span>
+</div>
+
+<section class="demo-section">
+  <div class="section-label">Interfaz de la aplicación</div>
+  <div class="code-frame">
+    <div class="code-bar">
+      <span class="code-filename">localhost:5000/Refugio/Animales</span>
+      <span class="code-lang">Razor</span>
+    </div>
+    <div class="aspx-window">
+      <div class="aspx-header">
+        <h2>Listado de Animales</h2>
+        <p>Conoce a los animales que esperan un hogar</p>
+      </div>
+      <div class="aspx-btn-wrap">
+        <div class="aspx-btn-add">+ Añadir animal</div>
+      </div>
+      <div class="aspx-cards">
+        <div class="aspx-card">
+          <div class="aspx-card-img">🐕</div>
+          <div class="aspx-card-body">
+            <div class="aspx-card-title">Toby</div>
+            <div class="aspx-card-meta">Perro · 3 años</div>
+            <span class="aspx-badge badge-disponible">En adopción</span>
+          </div>
+        </div>
+        <div class="aspx-card">
+          <div class="aspx-card-img">🐈</div>
+          <div class="aspx-card-body">
+            <div class="aspx-card-title">Luna</div>
+            <div class="aspx-card-meta">Gato · 1 año</div>
+            <span class="aspx-badge badge-adoptado">Adoptado</span>
+          </div>
+        </div>
+        <div class="aspx-card">
+          <div class="aspx-card-img">🐇</div>
+          <div class="aspx-card-body">
+            <div class="aspx-card-title">Copito</div>
+            <div class="aspx-card-meta">Conejo · 2 años</div>
+            <span class="aspx-badge badge-disponible">En adopción</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="demo-section" style="padding-top:0">
+  <div class="section-label">Código fuente real</div>
+  <div class="code-frame">
+    <div class="code-tabs">
+      <div class="code-tab active">Animal.cs</div>
+      <div class="code-tab">RefugioController.cs</div>
+    </div>
+    <div class="code-bar">
+      <span class="code-filename">Models/Animal.cs</span>
+      <span class="code-lang">C#</span>
+    </div>
+    <div class="code-body">
+<pre><span class="kw">using</span> System.ComponentModel.DataAnnotations;
+
+<span class="kw">namespace</span> RefugioAnimales.Models
+{
+    <span class="kw">public class</span> <span class="ty">Animal</span>
+    {
+        <span class="kw">public</span> <span class="ty">int</span> Id { <span class="kw">get</span>; <span class="kw">set</span>; }
+
+        <span class="an">[Required(ErrorMessage = "El nombre es obligatorio")]</span>
+        <span class="an">[StringLength(100)]</span>
+        <span class="kw">public</span> <span class="ty">string</span> Nombre { <span class="kw">get</span>; <span class="kw">set</span>; } = <span class="ty">string</span>.Empty;
+
+        <span class="an">[Required(ErrorMessage = "La especie es obligatoria")]</span>
+        <span class="kw">public</span> <span class="ty">string</span> Especie { <span class="kw">get</span>; <span class="kw">set</span>; } = <span class="ty">string</span>.Empty;
+
+        <span class="an">[Range(0, 30, ErrorMessage = "La edad debe estar entre 0 y 30")]</span>
+        <span class="kw">public</span> <span class="ty">int</span> Edad { <span class="kw">get</span>; <span class="kw">set</span>; }
+
+        <span class="kw">public</span> <span class="ty">string</span> Estado { <span class="kw">get</span>; <span class="kw">set</span>; } = <span class="str">"En adopción"</span>;
+
+        <span class="cm">// Relación con Adoptante</span>
+        <span class="kw">public</span> <span class="ty">int</span>? AdoptanteId { <span class="kw">get</span>; <span class="kw">set</span>; }
+        <span class="kw">public</span> Adoptante? Adoptante { <span class="kw">get</span>; <span class="kw">set</span>; }
+
+        <span class="kw">public</span> DateTime? FechaAdopcion { <span class="kw">get</span>; <span class="kw">set</span>; }
+    }
+}</pre>
+    </div>
+  </div>
+</section>
+
+<section class="project-info">
+  <div class="info-block">
+    <h3>Sobre el <em>proyecto</em></h3>
+    <p>Refugio de Animales gestiona el ciclo completo de adopción: alta de animales con validación mediante Data Annotations, registro de adoptantes, y el proceso de adopción/desadopción que actualiza la relación entre ambas entidades.</p>
+  </div>
+  <div class="info-block">
+    <h3>Funciona<em>lidades</em></h3>
+    <ul class="features">
+      <li>→ CRUD completo de animales y adoptantes</li>
+      <li>→ Validación de datos con Data Annotations</li>
+      <li>→ Proceso de adopción y desadopción</li>
+      <li>→ Almacenamiento de fotos como bytes en BD</li>
+      <li>→ Autenticación de usuarios con hash de contraseña</li>
+      <li>→ Entity Framework Core con migraciones</li>
+    </ul>
+  </div>
+</section>
+
+<section class="architecture">
+  <div class="section-label">Arquitectura</div>
+  <div class="arch-grid">
+    <div class="arch-cell"><div class="arch-name">Models</div><div class="arch-desc">Animal · Adoptante</div></div>
+    <div class="arch-cell"><div class="arch-name">Controllers</div><div class="arch-desc">Refugio · Adoptantes</div></div>
+    <div class="arch-cell"><div class="arch-name">Views</div><div class="arch-desc">Razor (.cshtml)</div></div>
+    <div class="arch-cell"><div class="arch-name">Data</div><div class="arch-desc">RefugioContext · EF</div></div>
+  </div>
+</section>
+
+<div class="project-nav">
+  <a href="web-paisajes.html">← Proyecto anterior</a>
+  <a href="cine-montecastelo.html">Siguiente proyecto →</a>
+</div>
+
+</body>
+</html>

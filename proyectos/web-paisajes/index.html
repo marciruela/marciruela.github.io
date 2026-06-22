@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Galería de Fotos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Menú superior -->
+    <nav class="navbar">
+        <h1 class="navbar-brand">Mis Galerías</h1>
+    </nav>
+
+    <!-- Galería de Naturaleza -->
+    <div class="gallery-section" id="naturaleza">
+        <div class="container">
+            <div class="gallery-nav">
+                <a href="#naturaleza">Naturaleza</a>
+                <a href="#ciudades">Ciudades</a>
+            </div>
+            <h2>Galería de Naturaleza</h2>
+            <div class="gallery-grid">
+                <a href="#modal1" class="gallery-item" data-title="Montañas">
+                    <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=500&h=500&fit=crop" alt="Montañas">
+                </a>
+                <a href="#modal2" class="gallery-item" data-title="Bosque">
+                    <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=500&h=500&fit=crop" alt="Bosque">
+                </a>
+                <a href="#modal3" class="gallery-item" data-title="Lago">
+                    <img src="https://images.unsplash.com/photo-1439066615861-d1af74d74000?w=500&h=500&fit=crop" alt="Lago">
+                </a>
+                <a href="#modal4" class="gallery-item" data-title="Cascada">
+                    <img src="https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=500&h=500&fit=crop" alt="Cascada">
+                </a>
+                <a href="#modal5" class="gallery-item" data-title="Playa">
+                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=500&h=500&fit=crop" alt="Playa">
+                </a>
+                <a href="#modal6" class="gallery-item" data-title="Desierto">
+                    <img src="https://images.unsplash.com/photo-1473580044384-7ba9967e16a0?w=500&h=500&fit=crop" alt="Desierto">
+                </a>
+                <a href="#modal7" class="gallery-item" data-title="Amanecer">
+                    <img src="https://images.unsplash.com/photo-1495616811223-4d98c6e9c869?w=500&h=500&fit=crop" alt="Amanecer">
+                </a>
+                <a href="#modal8" class="gallery-item" data-title="Niebla">
+                    <img src="https://images.unsplash.com/photo-1511497584788-876760111969?w=500&h=500&fit=crop" alt="Niebla">
+                </a>
+                <a href="#modal9" class="gallery-item" data-title="Flores">
+                    <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=500&h=500&fit=crop" alt="Flores">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Galería de Ciudades -->
+    <div class="gallery-section" id="ciudades">
+        <div class="container">
+            <div class="gallery-nav">
+                <a href="#naturaleza">Naturaleza</a>
+                <a href="#ciudades">Ciudades</a>
+            </div>
+            <h2>Galería de Ciudades</h2>
+            <div class="gallery-grid">
+                <a href="#modal10" class="gallery-item" data-title="Nueva York">
+                    <img src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=500&h=500&fit=crop" alt="Nueva York">
+                </a>
+                <a href="#modal11" class="gallery-item" data-title="París">
+                    <img src="https://images.unsplash.com/photo-1431274172761-fca41d930114?w=500&h=500&fit=crop" alt="París">
+                </a>
+                <a href="#modal12" class="gallery-item" data-title="Londres">
+                    <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=500&h=500&fit=crop" alt="Londres">
+                </a>
+                <a href="#modal13" class="gallery-item" data-title="Tokio">
+                    <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=500&h=500&fit=crop" alt="Tokio">
+                </a>
+                <a href="#modal14" class="gallery-item" data-title="Barcelona">
+                    <img src="https://images.unsplash.com/photo-1583422409516-2895a77efded?w=500&h=500&fit=crop" alt="Barcelona">
+                </a>
+                <a href="#modal15" class="gallery-item" data-title="Roma">
+                    <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=500&h=500&fit=crop" alt="Roma">
+                </a>
+                <a href="#modal16" class="gallery-item" data-title="Berlín">
+                    <img src="https://images.unsplash.com/photo-1560969184-10fe8719e047?w=500&h=500&fit=crop" alt="Berlín">
+                </a>
+                <a href="#modal17" class="gallery-item" data-title="Dubai">
+                    <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=500&h=500&fit=crop" alt="Dubai">
+                </a>
+                <a href="#modal18" class="gallery-item" data-title="Hong Kong">
+                    <img src="https://images.unsplash.com/photo-1536599018102-9f803c140fc1?w=500&h=500&fit=crop" alt="Hong Kong">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modales Naturaleza -->
+    <div class="modal-overlay" id="modal1">
+        <div class="modal-content">
+            <a href="#naturaleza" class="close-modal">&times;</a>
+            <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800" alt="Montañas">
+            <div class="modal-info">
+                <h3>Montañas</h3>
+                <p>Un paisaje montañoso con cumbres nevadas.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modal2">
+        <div class="modal-content">
+            <a href="#naturaleza" class="close-modal">&times;</a>
+            <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=800" alt="Bosque">
+            <div class="modal-info">
+                <h3>Bosque</h3>
+                <p>Un bosque denso lleno de árboles y vegetación.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modal3">
+        <div class="modal-content">
+            <a href="#naturaleza" class="close-modal">&times;</a>
+            <img src="https://images.unsplash.com/photo-1439066615861-d1af74d74000?w=800" alt="Lago">
+            <div class="modal-info">
+                <h3>Lago</h3>
+                <p>Un lago tranquilo rodeado de naturaleza.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modal4">
+        <div class="modal-content">
+            <a href="#naturaleza" class="close-modal">&times;</a>
+            <img src="https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=800" alt="Cascada">
+            <div class="modal-info">
+                <h3>Cascada</h3>
+                <p>Agua cayendo con fuerza desde las rocas.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modal5">
+        <div class="modal-content">
+            <a href="#naturaleza" class="close-modal">&times;</a>
+            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800" alt="Playa">
+            <div class="modal-info">
+                <h3>Playa</h3>
+                <p>Arena blanca y aguas cristalinas.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modal6">
+        <div class="modal-content">
+            <a href="#naturaleza" class="close-modal">&times;</a>
+            <img src="https://images.unsplash.com/photo-1473580044384-7ba9967e16a0?w=800" alt="Desierto">
+            <div class="modal-info">
+                <h3>Desierto</h3>
+                <p>Dunas de arena que se extienden hasta el horizonte.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modal7">
+        <div class="modal-content">
+            <a href="#naturaleza" class="close-modal">&times;</a>
+            <img src="https://images.unsplash.com/photo-1495616811223-4d98c6e9c869?w=800" alt="Amanecer">
+            <div class="modal-info">
+                <h3>Amanecer</h3>
+                <p>Los primeros rayos del sol iluminando el paisaje.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modal8">
+        <div class="modal-content">
+            <a href="#naturaleza" class="close-modal">&times;</a>
+            <img src="https://images.unsplash.com/photo-1511497584788-876760111969?w=800" alt="Niebla">
+            <div class="modal-info">
+                <h3>Niebla</h3>
+                <p>Niebla cubriendo el paisaje creando misterio.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modal9">
+        <div class="modal-content">
+            <a href="#naturaleza" class="close-modal">&times;</a>
+            <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=800" alt="Flores">
+            <div class="modal-info">
+                <h3>Flores</h3>
+                <p>Campo lleno de flores de colores.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modales Ciudades -->
+    <div class="modal-overlay" id="modal10">
+        <div class="modal-content">
+            <a href="#ciudades" class="close-modal">&times;</a>
+            <img src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=800" alt="Nueva York">
+            <div class="modal-info">
+                <h3>Nueva York</h3>
+                <p>La ciudad que nunca duerme con sus rascacielos.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modal11">
+        <div class="modal-content">
+            <a href="#ciudades" class="close-modal">&times;</a>
+            <img src="https://images.unsplash.com/photo-1431274172761-fca41d930114?w=800" alt="París">
+            <div class="modal-info">
+                <h3>París</h3>
+                <p>La ciudad de la luz y el amor.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modal12">
+        <div class="modal-content">
+            <a href="#ciudades" class="close-modal">&times;</a>
+            <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800" alt="Londres">
+            <div class="modal-info">
+                <h3>Londres</h3>
+                <p>Ciudad con mezcla de tradición y modernidad.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modal13">
+        <div class="modal-content">
+            <a href="#ciudades" class="close-modal">&times;</a>
+            <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=800" alt="Tokio">
+            <div class="modal-info">
+                <h3>Tokio</h3>
+                <p>Tecnología y tradición en armonía.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modal14">
+        <div class="modal-content">
+            <a href="#ciudades" class="close-modal">&times;</a>
+            <img src="https://images.unsplash.com/photo-1583422409516-2895a77efded?w=800" alt="Barcelona">
+            <div class="modal-info">
+                <h3>Barcelona</h3>
+                <p>Arte, arquitectura y playa mediterránea.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modal15">
+        <div class="modal-content">
+            <a href="#ciudades" class="close-modal">&times;</a>
+            <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=800" alt="Roma">
+            <div class="modal-info">
+                <h3>Roma</h3>
+                <p>La ciudad eterna llena de historia.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modal16">
+        <div class="modal-content">
+            <a href="#ciudades" class="close-modal">&times;</a>
+            <img src="https://images.unsplash.com/photo-1560969184-10fe8719e047?w=800" alt="Berlín">
+            <div class="modal-info">
+                <h3>Berlín</h3>
+                <p>Ciudad de contrastes y cultura alternativa.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modal17">
+        <div class="modal-content">
+            <a href="#ciudades" class="close-modal">&times;</a>
+            <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800" alt="Dubai">
+            <div class="modal-info">
+                <h3>Dubai</h3>
+                <p>Lujo y modernidad en el desierto.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modal18">
+        <div class="modal-content">
+            <a href="#ciudades" class="close-modal">&times;</a>
+            <img src="https://images.unsplash.com/photo-1536599018102-9f803c140fc1?w=800" alt="Hong Kong">
+            <div class="modal-info">
+                <h3>Hong Kong</h3>
+                <p>Ciudad vertical llena de energía y luces.</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
