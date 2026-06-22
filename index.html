@@ -40,8 +40,7 @@
   <div class="hero-roles fade-up delay-3">
     <span class="role-pill active">Fotografía</span>
     <span class="role-pill">Diseño gráfico</span>
-    <span class="role-pill">Diseño web</span>
-    <span class="role-pill">Desarrollo ASP.NET</span>
+    <span class="role-pill">Desarrollo web</span>
     <span class="role-pill">Piloto de dron</span>
   </div>
   <div class="hero-scroll fade-up delay-4">Scroll</div>
@@ -87,9 +86,9 @@
   <div class="portfolio-filter">
     <button class="filter-btn active" onclick="filterPortfolio(this,'all')">Todo</button>
     <button class="filter-btn" onclick="filterPortfolio(this,'foto')">Fotografía</button>
-    <button class="filter-btn" onclick="filterPortfolio(this,'diseno')">Diseño</button>
-    <button class="filter-btn" onclick="filterPortfolio(this,'web')">Diseño web</button>
-    <button class="filter-btn" onclick="filterPortfolio(this,'dev')">Desarrollo</button>
+    <button class="filter-btn" onclick="filterPortfolio(this,'diseno')">Diseño gráfico</button>
+    <button class="filter-btn" onclick="filterPortfolio(this,'dev')">Desarrollo web</button>
+    <button class="filter-btn" onclick="filterPortfolio(this,'dron')">Drones</button>
   </div>
 
   <div class="portfolio-grid">
@@ -100,8 +99,6 @@
         <span class="ph-icon">📷</span>
         <span class="ph-label">Fotografía · Próximamente</span>
       </div>
-      <!-- Cuando tengas la foto, reemplaza el div.portfolio-placeholder por:
-      <img src="assets/img/foto-urbana.jpg" alt="Sesión urbana Madrid"> -->
       <div class="portfolio-overlay">
         <div class="overlay-cat">Fotografía</div>
         <div class="overlay-title">Sesión urbana · Madrid</div>
@@ -120,51 +117,51 @@
       </div>
     </div>
 
-    <!-- ITEM 3 — Desarrollo ASP.NET -->
-    <div class="portfolio-item" data-cat="dev">
-      <div class="portfolio-placeholder">
-        <span class="ph-icon">⌨</span>
-        <span class="ph-label">ASP.NET MVC · Próximamente</span>
+    <!-- ITEM 3 — Cine Montecastelo -->
+    <div class="portfolio-item" data-cat="dev" style="cursor:pointer" onclick="window.location.href='proyectos/cine-montecastelo.html'">
+      <div class="portfolio-placeholder" style="background:linear-gradient(135deg,#0a0a1a,#1a1a2e)">
+        <span class="ph-icon">🎬</span>
+        <span class="ph-label">ASP.NET MVC · C#</span>
       </div>
       <div class="portfolio-overlay">
-        <div class="overlay-cat">Desarrollo ASP.NET MVC</div>
-        <div class="overlay-title">Aplicación de gestión</div>
+        <div class="overlay-cat">Desarrollo web · ASP.NET MVC</div>
+        <div class="overlay-title">Cine Montecastelo</div>
       </div>
     </div>
 
-    <!-- ITEM 4 — Diseño web -->
-    <div class="portfolio-item" data-cat="web">
-      <div class="portfolio-placeholder">
-        <span class="ph-icon">◻</span>
-        <span class="ph-label">Diseño web · Próximamente</span>
+    <!-- ITEM 4 — Buscador de Música -->
+    <div class="portfolio-item" data-cat="dev" style="cursor:pointer" onclick="window.location.href='proyectos/buscador-musica.html'">
+      <div class="portfolio-placeholder" style="background:linear-gradient(135deg,#1e1a2e,#2d1b4e)">
+        <span class="ph-icon">🎵</span>
+        <span class="ph-label">JavaScript · API</span>
       </div>
       <div class="portfolio-overlay">
-        <div class="overlay-cat">Diseño web</div>
-        <div class="overlay-title">Landing page · E-commerce</div>
+        <div class="overlay-cat">Desarrollo web · JavaScript</div>
+        <div class="overlay-title">TrackWave — Buscador de música</div>
       </div>
     </div>
 
-    <!-- ITEM 5 — Fotografía (grande) -->
-    <div class="portfolio-item" data-cat="foto">
-      <div class="portfolio-placeholder">
-        <span class="ph-icon">◎</span>
-        <span class="ph-label">Fotografía · Próximamente</span>
+    <!-- ITEM 5 — E-Commerce Repostería (grande) -->
+    <div class="portfolio-item" data-cat="dev" style="cursor:pointer" onclick="window.location.href='proyectos/ecommerce-reposteria.html'">
+      <div class="portfolio-placeholder" style="background:linear-gradient(135deg,#1a0a08,#2c1810)">
+        <span class="ph-icon">🍰</span>
+        <span class="ph-label">HTML · CSS · Bootstrap</span>
       </div>
       <div class="portfolio-overlay">
-        <div class="overlay-cat">Fotografía</div>
-        <div class="overlay-title">Retrato natural · Estudio</div>
+        <div class="overlay-cat">Desarrollo web · E-Commerce</div>
+        <div class="overlay-title">Dulce Pasión — Repostería artesanal</div>
       </div>
     </div>
 
-    <!-- ITEM 6 — Diseño gráfico -->
-    <div class="portfolio-item" data-cat="diseno">
-      <div class="portfolio-placeholder">
-        <span class="ph-icon">◈</span>
-        <span class="ph-label">Diseño gráfico · Próximamente</span>
+    <!-- ITEM 6 — Minigranja -->
+    <div class="portfolio-item" data-cat="dev" style="cursor:pointer" onclick="window.location.href='proyectos/minigranja.html'">
+      <div class="portfolio-placeholder" style="background:linear-gradient(135deg,#0a140a,#1a2e1a)">
+        <span class="ph-icon">🌾</span>
+        <span class="ph-label">Java · POO</span>
       </div>
       <div class="portfolio-overlay">
-        <div class="overlay-cat">Diseño gráfico</div>
-        <div class="overlay-title">Cartel publicitario</div>
+        <div class="overlay-cat">Desarrollo · Java</div>
+        <div class="overlay-title">Minigranja — Gestión de granja</div>
       </div>
     </div>
 

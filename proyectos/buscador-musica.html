@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TrackWave — Mar Ciruela</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300;1,400&family=DM+Mono:wght@300;400&family=Syne:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="../assets/logo/logo-main.svg">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg: #0a0a0a; --bg2: #111111; --bg3: #181818;
+      --border: rgba(255,255,255,0.07); --border2: rgba(255,255,255,0.14);
+      --text: #f0ede8; --muted: rgba(240,237,232,0.45);
+      --accent: #c8a96e; --accent2: #e8d5b0;
+      --font-display: 'Syne', sans-serif;
+      --font-serif: 'Cormorant Garamond', serif;
+      --font-mono: 'DM Mono', monospace;
+    }
+    body { background: var(--bg); color: var(--text); font-family: var(--font-display); }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.25rem 3rem;
+      border-bottom: 0.5px solid var(--border);
+      background: rgba(10,10,10,0.9);
+      backdrop-filter: blur(16px);
+    }
+    .nav-back {
+      font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--muted); text-decoration: none;
+      display: flex; align-items: center; gap: 0.5rem; transition: color 0.2s;
+    }
+    .nav-back:hover { color: var(--accent); }
+    .nav-logo { font-family: var(--font-serif); font-size: 1.2rem; font-weight: 300; color: var(--text); }
+    .nav-logo span { color: var(--accent); font-style: italic; }
+
+    /* HERO PROYECTO */
+    .project-hero {
+      min-height: 60vh; display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 8rem 3rem 4rem;
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a0e24 100%);
+      border-bottom: 0.5px solid var(--border);
+      position: relative; overflow: hidden;
+    }
+    .project-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 60% 60% at 80% 40%, rgba(108,92,231,0.12) 0%, transparent 70%);
+    }
+    .project-cat {
+      font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--accent);
+      display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem;
+    }
+    .project-cat::before { content: ''; display: block; width: 24px; height: 1px; background: var(--accent); }
+    .project-title {
+      font-family: var(--font-serif); font-size: clamp(3rem, 7vw, 6rem);
+      font-weight: 300; line-height: 0.95; margin-bottom: 1rem;
+    }
+    .project-title em { font-style: italic; color: var(--accent); }
+    .project-desc {
+      font-family: var(--font-serif); font-size: 1.2rem; font-weight: 300;
+      color: var(--muted); max-width: 600px; line-height: 1.7; margin-bottom: 2rem;
+    }
+    .project-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .tag {
+      font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--accent);
+      border: 0.5px solid rgba(200,169,110,0.4); background: rgba(200,169,110,0.08);
+      padding: 0.35rem 0.8rem; border-radius: 100px;
+    }
+
+    /* PREVIEW */
+    .project-preview {
+      padding: 4rem 3rem;
+      border-bottom: 0.5px solid var(--border);
+    }
+    .section-label {
+      font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--accent);
+      display: flex; align-items: center; gap: 0.75rem; margin-bottom: 2rem;
+    }
+    .section-label::before { content: ''; display: block; width: 24px; height: 1px; background: var(--accent); }
+
+    .browser-frame {
+      background: var(--bg2); border: 0.5px solid var(--border2); border-radius: 8px;
+      overflow: hidden; box-shadow: 0 40px 80px rgba(0,0,0,0.4);
+    }
+    .browser-bar {
+      background: var(--bg3); padding: 0.75rem 1rem;
+      display: flex; align-items: center; gap: 0.5rem;
+      border-bottom: 0.5px solid var(--border);
+    }
+    .browser-dot { width: 10px; height: 10px; border-radius: 50%; }
+    .browser-dot:nth-child(1) { background: #ff5f57; }
+    .browser-dot:nth-child(2) { background: #febc2e; }
+    .browser-dot:nth-child(3) { background: #28c840; }
+    .browser-url {
+      flex: 1; background: var(--bg); border-radius: 4px;
+      padding: 0.3rem 0.75rem; margin: 0 0.5rem;
+      font-family: var(--font-mono); font-size: 0.62rem; color: var(--muted);
+    }
+    .browser-content {
+      width: 100%; aspect-ratio: 16/9; border: none;
+      background: #1e272e;
+    }
+
+    /* MOCKUP VISUAL cuando no hay iframe */
+    .mockup {
+      width: 100%; min-height: 400px;
+      background: linear-gradient(135deg, #1e272e 0%, #2d3436 100%);
+      display: flex; flex-direction: column;
+    }
+    .mockup-header {
+      background: #2d3436; padding: 1.5rem 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .mockup-logo { font-size: 1.4rem; font-weight: 700; color: #f5f6fa; font-family: 'Syne', sans-serif; }
+    .mockup-logo span { color: #6c5ce7; margin-right: 0.5rem; }
+    .mockup-subtitle { font-size: 0.8rem; color: #a29bfe; }
+    .mockup-search {
+      padding: 2rem; display: flex; justify-content: center;
+    }
+    .mockup-search-box {
+      display: flex; width: 100%; max-width: 600px;
+      background: rgba(255,255,255,0.1); border-radius: 50px;
+      overflow: hidden; border: 1px solid rgba(255,255,255,0.05);
+    }
+    .mockup-input {
+      flex: 1; padding: 0.875rem 1.5rem; background: transparent;
+      border: none; color: #f5f6fa; font-family: 'Syne', sans-serif; font-size: 0.9rem;
+    }
+    .mockup-btn {
+      padding: 0 1.5rem; background: #6c5ce7; color: white;
+      border: none; font-size: 0.85rem; font-family: 'Syne', sans-serif;
+    }
+    .mockup-grid {
+      padding: 0 2rem 2rem;
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;
+    }
+    .mockup-card {
+      background: rgba(44,44,44,0.8); border-radius: 10px; overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+    .mockup-card-img {
+      width: 100%; aspect-ratio: 1; display: flex; align-items: center;
+      justify-content: center; font-size: 2.5rem;
+    }
+    .mockup-card-info { padding: 0.75rem; }
+    .mockup-card-title { font-size: 0.78rem; color: #f5f6fa; font-weight: 600; margin-bottom: 0.25rem; font-family: 'Syne', sans-serif; }
+    .mockup-card-sub { font-size: 0.7rem; color: #636e72; margin-bottom: 0.5rem; font-family: 'Syne', sans-serif; }
+    .mockup-card-btn {
+      width: 100%; padding: 0.4rem; background: #6c5ce7; color: white;
+      border: none; border-radius: 4px; font-size: 0.7rem; font-family: 'Syne', sans-serif;
+    }
+
+    /* INFO */
+    .project-info { padding: 4rem 3rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; border-bottom: 0.5px solid var(--border); }
+    .info-block h3 { font-family: var(--font-serif); font-size: 1.8rem; font-weight: 300; margin-bottom: 1rem; }
+    .info-block h3 em { font-style: italic; color: var(--accent); }
+    .info-block p { font-family: var(--font-serif); font-size: 1.1rem; font-weight: 300; color: var(--muted); line-height: 1.8; }
+    .features { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+    .features li {
+      font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.08em;
+      color: var(--muted); padding: 0.75rem 1rem;
+      background: var(--bg2); border-left: 2px solid var(--accent);
+      display: flex; align-items: center; gap: 0.75rem;
+    }
+    .features li::before { content: '→'; color: var(--accent); }
+
+    /* TECH STACK */
+    .tech-stack { padding: 4rem 3rem; border-bottom: 0.5px solid var(--border); }
+    .tech-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); margin-top: 2rem; }
+    .tech-cell { background: var(--bg2); padding: 2rem; text-align: center; }
+    .tech-name { font-family: var(--font-serif); font-size: 1.2rem; font-weight: 300; color: var(--accent); margin-bottom: 0.25rem; }
+    .tech-desc { font-family: var(--font-mono); font-size: 0.58rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+
+    /* FOOTER NAV */
+    .project-nav { padding: 3rem; display: flex; justify-content: space-between; align-items: center; }
+    .project-nav a {
+      font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--muted); text-decoration: none;
+      display: flex; align-items: center; gap: 0.5rem; transition: color 0.2s;
+    }
+    .project-nav a:hover { color: var(--accent); }
+
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .project-hero, .project-preview, .project-info, .tech-stack { padding: 4rem 1.5rem; }
+      .project-info { grid-template-columns: 1fr; gap: 2rem; }
+      .tech-grid { grid-template-columns: repeat(2, 1fr); }
+      .mockup-grid { grid-template-columns: repeat(2, 1fr); }
+      .project-nav { padding: 2rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="../index.html#portfolio" class="nav-back">← Volver al portfolio</a>
+  <div class="nav-logo">Mar <span>Ciruela</span></div>
+</nav>
+
+<section class="project-hero">
+  <div class="project-cat">Desarrollo web</div>
+  <h1 class="project-title">Track<em>Wave</em></h1>
+  <p class="project-desc">Buscador de música que permite explorar artistas, canciones y álbumes con reproducción de previews y sistema de historial inteligente.</p>
+  <div class="project-tags">
+    <span class="tag">HTML5</span>
+    <span class="tag">CSS3</span>
+    <span class="tag">JavaScript</span>
+    <span class="tag">API REST</span>
+    <span class="tag">Responsive</span>
+  </div>
+</section>
+
+<section class="project-preview">
+  <div class="section-label">Vista previa</div>
+  <div class="browser-frame">
+    <div class="browser-bar">
+      <div class="browser-dot"></div>
+      <div class="browser-dot"></div>
+      <div class="browser-dot"></div>
+      <div class="browser-url">trackwave — buscador de música</div>
+    </div>
+    <div class="mockup">
+      <div class="mockup-header">
+        <div>
+          <div class="mockup-logo"><span>♪</span> TrackWave</div>
+          <div class="mockup-subtitle">Descubre la música que amas</div>
+        </div>
+      </div>
+      <div class="mockup-search">
+        <div class="mockup-search-box">
+          <input class="mockup-input" placeholder="Busca artistas, canciones o álbumes..." readonly>
+          <button class="mockup-btn">🔍 Buscar</button>
+        </div>
+      </div>
+      <div class="mockup-grid">
+        <div class="mockup-card">
+          <div class="mockup-card-img" style="background:linear-gradient(135deg,#6c5ce7,#a29bfe)">🎵</div>
+          <div class="mockup-card-info">
+            <div class="mockup-card-title">Blinding Lights</div>
+            <div class="mockup-card-sub">The Weeknd · 2019</div>
+            <button class="mockup-card-btn">▶ Preview</button>
+          </div>
+        </div>
+        <div class="mockup-card">
+          <div class="mockup-card-img" style="background:linear-gradient(135deg,#00cec9,#6c5ce7)">🎶</div>
+          <div class="mockup-card-info">
+            <div class="mockup-card-title">Shape of You</div>
+            <div class="mockup-card-sub">Ed Sheeran · 2017</div>
+            <button class="mockup-card-btn">▶ Preview</button>
+          </div>
+        </div>
+        <div class="mockup-card">
+          <div class="mockup-card-img" style="background:linear-gradient(135deg,#fd79a8,#6c5ce7)">🎸</div>
+          <div class="mockup-card-info">
+            <div class="mockup-card-title">Levitating</div>
+            <div class="mockup-card-sub">Dua Lipa · 2020</div>
+            <button class="mockup-card-btn">▶ Preview</button>
+          </div>
+        </div>
+        <div class="mockup-card">
+          <div class="mockup-card-img" style="background:linear-gradient(135deg,#fdcb6e,#6c5ce7)">🎤</div>
+          <div class="mockup-card-info">
+            <div class="mockup-card-title">Stay</div>
+            <div class="mockup-card-sub">The Kid LAROI · 2021</div>
+            <button class="mockup-card-btn">▶ Preview</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="project-info">
+  <div class="info-block">
+    <h3>Sobre el <em>proyecto</em></h3>
+    <p>TrackWave es una aplicación web de búsqueda musical que conecta con la API de Deezer para ofrecer resultados en tiempo real. El usuario puede buscar artistas, canciones o álbumes, escuchar previews de 30 segundos y guardar un historial de búsquedas.</p>
+  </div>
+  <div class="info-block">
+    <h3>Funciona<em>lidades</em></h3>
+    <ul class="features">
+      <li>Búsqueda en tiempo real con API de Deezer</li>
+      <li>Reproducción de previews de 30 segundos</li>
+      <li>Historial de búsquedas con localStorage</li>
+      <li>Sistema de recomendaciones</li>
+      <li>Diseño responsive para móvil y escritorio</li>
+      <li>Animaciones y transiciones fluidas</li>
+    </ul>
+  </div>
+</section>
+
+<section class="tech-stack">
+  <div class="section-label">Tecnologías</div>
+  <div class="tech-grid">
+    <div class="tech-cell">
+      <div class="tech-name">HTML5</div>
+      <div class="tech-desc">Estructura semántica</div>
+    </div>
+    <div class="tech-cell">
+      <div class="tech-name">CSS3</div>
+      <div class="tech-desc">Diseño y animaciones</div>
+    </div>
+    <div class="tech-cell">
+      <div class="tech-name">JavaScript</div>
+      <div class="tech-desc">Lógica y API calls</div>
+    </div>
+    <div class="tech-cell">
+      <div class="tech-name">Deezer API</div>
+      <div class="tech-desc">Datos musicales</div>
+    </div>
+  </div>
+</section>
+
+<div class="project-nav">
+  <a href="../index.html#portfolio">← Volver al portfolio</a>
+  <a href="ecommerce-reposteria.html">Siguiente proyecto →</a>
+</div>
+
+</body>
+</html>
