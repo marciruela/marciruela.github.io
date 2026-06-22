@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dulce Pasión - Pastelería Artesanal</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#inicio">
+                <h1>Dulce Pasión</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#inicio">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tartas">Tartas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#cupcakes">Cupcakes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#galletas">Galletas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link carrito-link" href="#carrito" id="carrito-contador">Carrito (0)</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="container">
+            <h2>La mejor pastelería artesanal</h2>
+            <p>Dulces recién horneados para endulzar tu día</p>
+        </div>
+    </section>
+
+    <!-- Sección Tartas -->
+    <section class="productos" id="tartas">
+        <div class="container">
+            <h2>Tartas</h2>
+            <div class="galeria">
+                <div class="producto-card">
+                    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&h=500&fit=crop" alt="Tarta de chocolate">
+                    <h3>Tarta de Chocolate</h3>
+                    <p class="descripcion">Chocolate belga premium</p>
+                    <p class="precio">€24.99</p>
+                    <button class="btn-agregar">Añadir al carrito</button>
+                </div>
+                <div class="producto-card">
+                    <img src="https://plus.unsplash.com/premium_photo-1715080610621-715ff25546ba?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Tarta de fresa">
+                    <h3>Tarta de Fresa</h3>
+                    <p class="descripcion">Fresas frescas y nata</p>
+                    <p class="precio">€22.99</p>
+                    <button class="btn-agregar">Añadir al carrito</button>
+                </div>
+                <div class="producto-card">
+                    <img src="https://images.unsplash.com/photo-1676300186098-9b5ae9916e3c?q=80&w=690&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Tarta de zanahoria">
+                    <h3>Tarta de Zanahoria</h3>
+                    <p class="descripcion">Con frosting de queso</p>
+                    <p class="precio">€21.99</p>
+                    <button class="btn-agregar">Añadir al carrito</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Cupcakes -->
+    <section class="productos" id="cupcakes">
+        <div class="container">
+            <h2>Cupcakes</h2>
+            <div class="galeria">
+                <div class="producto-card">
+                    <img src="https://images.unsplash.com/photo-1426869884541-df7117556757?w=400&h=500&fit=crop" alt="Cupcakes variados">
+                    <h3>Pack 6 Cupcakes Variados</h3>
+                    <p class="descripcion">Sabores surtidos</p>
+                    <p class="precio">€12.99</p>
+                    <button class="btn-agregar">Añadir al carrito</button>
+                </div>
+                <div class="producto-card">
+                    <img src="https://images.unsplash.com/photo-1603532648955-039310d9ed75?w=400&h=500&fit=crop" alt="Cupcakes chocolate">
+                    <h3>Cupcakes de Chocolate</h3>
+                    <p class="descripcion">Con chips de chocolate</p>
+                    <p class="precio">€14.99</p>
+                    <button class="btn-agregar">Añadir al carrito</button>
+                </div>
+                <div class="producto-card">
+                    <img src="https://images.unsplash.com/photo-1623246123320-0d6636755796?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cupcakes vainilla">
+                    <h3>Cupcakes de Vainilla</h3>
+                    <p class="descripcion">Clásicos con buttercream</p>
+                    <p class="precio">€11.99</p>
+                    <button class="btn-agregar">Añadir al carrito</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Galletas -->
+    <section class="productos" id="galletas">
+        <div class="container">
+            <h2>Galletas y Cookies</h2>
+            <div class="galeria">
+                <div class="producto-card">
+                    <img src="https://images.unsplash.com/photo-1590080874088-eec64895b423?q=80&w=894&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cookies chocolate">
+                    <h3>Cookies de Chocolate</h3>
+                    <p class="descripcion">Pack de 12 unidades</p>
+                    <p class="precio">€8.99</p>
+                    <button class="btn-agregar">Añadir al carrito</button>
+                </div>
+                <div class="producto-card">
+                    <img src="https://images.unsplash.com/photo-1753826367297-67a18a81abbf?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Galletas surtidas">
+                    <h3>Galletas Surtidas</h3>
+                    <p class="descripcion">Caja variada artesanal</p>
+                    <p class="precio">€9.99</p>
+                    <button class="btn-agregar">Añadir al carrito</button>
+                </div>
+                <div class="producto-card">
+                    <img src="https://images.unsplash.com/photo-1613040599929-df37463471cb?q=80&w=779&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Macarons">
+                    <h3>Macarons Franceses</h3>
+                    <p class="descripcion">Pack de 8 macarons</p>
+                    <p class="precio">€15.99</p>
+                    <button class="btn-agregar">Añadir al carrito</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Dulce Pasión - Todos los derechos reservados</p>
+        </div>
+    </footer>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      let totalCarrito = 0;
+      document.querySelectorAll('.btn-agregar').forEach(btn => {
+        btn.addEventListener('click', () => {
+          totalCarrito++;
+          document.getElementById('carrito-contador').textContent = `Carrito (${totalCarrito})`;
+          btn.textContent = 'Añadido ✓';
+          btn.disabled = true;
+          setTimeout(() => {
+            btn.textContent = 'Añadir al carrito';
+            btn.disabled = false;
+          }, 1200);
+        });
+      });
+    </script>
+</body>
+</html>

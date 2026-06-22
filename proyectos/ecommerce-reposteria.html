@@ -18,82 +18,57 @@
       --font-mono: 'DM Mono', monospace;
     }
     body { background: var(--bg); color: var(--text); font-family: var(--font-display); }
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 1.25rem 3rem; border-bottom: 0.5px solid var(--border);
-      background: rgba(10,10,10,0.9); backdrop-filter: blur(16px);
-    }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 3rem; border-bottom: 0.5px solid var(--border); background: rgba(10,10,10,0.92); backdrop-filter: blur(16px); }
     .nav-back { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; transition: color 0.2s; }
     .nav-back:hover { color: var(--accent); }
     .nav-logo { font-family: var(--font-serif); font-size: 1.2rem; font-weight: 300; color: var(--text); }
     .nav-logo span { color: var(--accent); font-style: italic; }
-    .project-hero {
-      min-height: 60vh; display: flex; flex-direction: column; justify-content: flex-end;
-      padding: 8rem 3rem 4rem;
-      background: linear-gradient(135deg, #0a0a0a 0%, #1a0a0e 100%);
-      border-bottom: 0.5px solid var(--border); position: relative; overflow: hidden;
-    }
-    .project-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 60% at 80% 40%, rgba(220,100,100,0.1) 0%, transparent 70%); }
-    .project-cat { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem; }
+    .project-hero { padding: 7rem 3rem 3rem; border-bottom: 0.5px solid var(--border); }
+    .project-cat { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem; }
     .project-cat::before { content: ''; display: block; width: 24px; height: 1px; background: var(--accent); }
-    .project-title { font-family: var(--font-serif); font-size: clamp(3rem, 7vw, 6rem); font-weight: 300; line-height: 0.95; margin-bottom: 1rem; }
+    .project-title { font-family: var(--font-serif); font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 300; line-height: 1; margin-bottom: 0.75rem; }
     .project-title em { font-style: italic; color: var(--accent); }
-    .project-desc { font-family: var(--font-serif); font-size: 1.2rem; font-weight: 300; color: var(--muted); max-width: 600px; line-height: 1.7; margin-bottom: 2rem; }
+    .project-desc { font-family: var(--font-serif); font-size: 1.05rem; font-weight: 300; color: var(--muted); max-width: 640px; line-height: 1.6; margin-bottom: 1.5rem; }
     .project-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-    .tag { font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); border: 0.5px solid rgba(200,169,110,0.4); background: rgba(200,169,110,0.08); padding: 0.35rem 0.8rem; border-radius: 100px; }
-    .project-preview { padding: 4rem 3rem; border-bottom: 0.5px solid var(--border); }
-    .section-label { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); display: flex; align-items: center; gap: 0.75rem; margin-bottom: 2rem; }
-    .section-label::before { content: ''; display: block; width: 24px; height: 1px; background: var(--accent); }
-    .browser-frame { background: var(--bg2); border: 0.5px solid var(--border2); border-radius: 8px; overflow: hidden; box-shadow: 0 40px 80px rgba(0,0,0,0.4); }
+    .tag { font-family: var(--font-mono); font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); border: 0.5px solid rgba(200,169,110,0.4); background: rgba(200,169,110,0.08); padding: 0.32rem 0.75rem; border-radius: 100px; }
+    .demo-section { padding: 3rem; }
+    .section-label { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem; }
+    .section-label-text { display: flex; align-items: center; gap: 0.75rem; }
+    .section-label-text::before { content: ''; display: block; width: 24px; height: 1px; background: var(--accent); }
+    .live-badge { display: flex; align-items: center; gap: 0.4rem; font-size: 0.58rem; color: #4ade80; }
+    .live-dot { width: 6px; height: 6px; border-radius: 50%; background: #4ade80; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+    .browser-frame { background: var(--bg2); border: 0.5px solid var(--border2); border-radius: 10px; overflow: hidden; box-shadow: 0 40px 100px rgba(0,0,0,0.5); }
     .browser-bar { background: var(--bg3); padding: 0.75rem 1rem; display: flex; align-items: center; gap: 0.5rem; border-bottom: 0.5px solid var(--border); }
     .browser-dot { width: 10px; height: 10px; border-radius: 50%; }
     .browser-dot:nth-child(1) { background: #ff5f57; }
     .browser-dot:nth-child(2) { background: #febc2e; }
     .browser-dot:nth-child(3) { background: #28c840; }
     .browser-url { flex: 1; background: var(--bg); border-radius: 4px; padding: 0.3rem 0.75rem; margin: 0 0.5rem; font-family: var(--font-mono); font-size: 0.62rem; color: var(--muted); }
-
-    /* MOCKUP PASTELERÍA */
-    .mockup { width: 100%; background: #fff8f5; }
-    .mockup-nav { background: #2c1810; padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between; }
-    .mockup-brand { font-size: 1.3rem; color: #f5e6d3; font-family: 'Syne', sans-serif; font-weight: 700; }
-    .mockup-links { display: flex; gap: 1.5rem; }
-    .mockup-link { font-size: 0.75rem; color: rgba(245,230,211,0.7); font-family: 'Syne', sans-serif; }
-    .mockup-hero { background: linear-gradient(135deg, #2c1810, #8b4513); padding: 3rem 2rem; text-align: center; }
-    .mockup-hero h2 { font-size: 1.8rem; color: #f5e6d3; font-family: 'Syne', sans-serif; margin-bottom: 0.5rem; }
-    .mockup-hero p { font-size: 0.9rem; color: rgba(245,230,211,0.7); font-family: 'Syne', sans-serif; }
-    .mockup-section { padding: 2rem; background: #fff8f5; }
-    .mockup-section h3 { font-size: 1.2rem; color: #2c1810; font-family: 'Syne', sans-serif; margin-bottom: 1rem; font-weight: 700; }
-    .mockup-products { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
-    .mockup-product { background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.08); }
-    .mockup-product-img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: flex; align-items: center; justify-content: center; font-size: 3rem; }
-    .mockup-product-info { padding: 0.75rem; }
-    .mockup-product-name { font-size: 0.85rem; color: #2c1810; font-family: 'Syne', sans-serif; font-weight: 600; margin-bottom: 0.25rem; }
-    .mockup-product-price { font-size: 0.9rem; color: #8b4513; font-family: 'Syne', sans-serif; font-weight: 700; margin-bottom: 0.5rem; }
-    .mockup-product-btn { width: 100%; padding: 0.5rem; background: #2c1810; color: #f5e6d3; border: none; border-radius: 4px; font-size: 0.75rem; font-family: 'Syne', sans-serif; cursor: pointer; }
-
-    .project-info { padding: 4rem 3rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; border-bottom: 0.5px solid var(--border); }
-    .info-block h3 { font-family: var(--font-serif); font-size: 1.8rem; font-weight: 300; margin-bottom: 1rem; }
+    .browser-content { width: 100%; height: 80vh; border: none; display: block; background: #fff8f5; }
+    .project-info { padding: 3rem; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; border-top: 0.5px solid var(--border); }
+    .info-block h3 { font-family: var(--font-serif); font-size: 1.6rem; font-weight: 300; margin-bottom: 1rem; }
     .info-block h3 em { font-style: italic; color: var(--accent); }
-    .info-block p { font-family: var(--font-serif); font-size: 1.1rem; font-weight: 300; color: var(--muted); line-height: 1.8; }
-    .features { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
-    .features li { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.08em; color: var(--muted); padding: 0.75rem 1rem; background: var(--bg2); border-left: 2px solid var(--accent); display: flex; align-items: center; gap: 0.75rem; }
-    .features li::before { content: '→'; color: var(--accent); }
-    .tech-stack { padding: 4rem 3rem; border-bottom: 0.5px solid var(--border); }
-    .tech-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); margin-top: 2rem; }
-    .tech-cell { background: var(--bg2); padding: 2rem; text-align: center; }
-    .tech-name { font-family: var(--font-serif); font-size: 1.2rem; font-weight: 300; color: var(--accent); margin-bottom: 0.25rem; }
-    .tech-desc { font-family: var(--font-mono); font-size: 0.58rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
-    .project-nav { padding: 3rem; display: flex; justify-content: space-between; align-items: center; }
-    .project-nav a { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; transition: color 0.2s; }
+    .info-block p { font-family: var(--font-serif); font-size: 1.05rem; font-weight: 300; color: var(--muted); line-height: 1.8; }
+    .features { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+    .features li { font-family: var(--font-mono); font-size: 0.64rem; letter-spacing: 0.06em; color: var(--muted); padding: 0.65rem 0.9rem; background: var(--bg2); border-left: 2px solid var(--accent); }
+    .tech-stack { padding: 2rem 3rem 3rem; }
+    .tech-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); margin-top: 1rem; }
+    .tech-cell { background: var(--bg2); padding: 1.5rem; text-align: center; }
+    .tech-name { font-family: var(--font-serif); font-size: 1.1rem; font-weight: 300; color: var(--accent); }
+    .tech-desc { font-family: var(--font-mono); font-size: 0.56rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-top: 0.2rem; }
+    .project-nav { padding: 2rem 3rem 3rem; display: flex; justify-content: space-between; align-items: center; border-top: 0.5px solid var(--border); }
+    .project-nav a { font-family: var(--font-mono); font-size: 0.64rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
     .project-nav a:hover { color: var(--accent); }
     @media (max-width: 768px) {
       nav { padding: 1rem 1.5rem; }
-      .project-hero, .project-preview, .project-info, .tech-stack { padding: 4rem 1.5rem; }
-      .project-info { grid-template-columns: 1fr; gap: 2rem; }
+      .project-hero { padding: 5rem 1.5rem 2rem; }
+      .demo-section { padding: 2rem 1.5rem; }
+      .project-info { grid-template-columns: 1fr; gap: 1.5rem; padding: 2rem 1.5rem; }
+      .tech-stack { padding: 1rem 1.5rem 2rem; }
       .tech-grid { grid-template-columns: repeat(2, 1fr); }
-      .mockup-products { grid-template-columns: repeat(2, 1fr); }
-      .project-nav { padding: 2rem 1.5rem; }
+      .browser-content { height: 70vh; }
+      .project-nav { padding: 1.5rem; flex-direction: column; gap: 1rem; }
     }
   </style>
 </head>
@@ -105,111 +80,56 @@
 </nav>
 
 <section class="project-hero">
-  <div class="project-cat">Desarrollo web</div>
+  <div class="project-cat">Desarrollo web · Aplicación funcional</div>
   <h1 class="project-title">Dulce <em>Pasión</em></h1>
-  <p class="project-desc">Tienda online de repostería artesanal con catálogo de productos, carrito de compra y navegación por categorías usando Bootstrap 5.</p>
+  <p class="project-desc">Tienda online de repostería artesanal con catálogo de productos por categorías y carrito de compra interactivo, construida con HTML5, CSS3 y Bootstrap 5.</p>
   <div class="project-tags">
     <span class="tag">HTML5</span>
     <span class="tag">CSS3</span>
     <span class="tag">Bootstrap 5</span>
+    <span class="tag">JavaScript</span>
     <span class="tag">E-Commerce</span>
-    <span class="tag">Responsive</span>
   </div>
 </section>
 
-<section class="project-preview">
-  <div class="section-label">Vista previa</div>
+<section class="demo-section">
+  <div class="section-label">
+    <span class="section-label-text">Demo en directo — añade productos al carrito</span>
+    <span class="live-badge"><span class="live-dot"></span>FUNCIONAL</span>
+  </div>
   <div class="browser-frame">
     <div class="browser-bar">
       <div class="browser-dot"></div>
       <div class="browser-dot"></div>
       <div class="browser-dot"></div>
-      <div class="browser-url">dulce-pasion — pastelería artesanal</div>
+      <div class="browser-url">dulcepasion.es — pastelería artesanal</div>
     </div>
-    <div class="mockup">
-      <div class="mockup-nav">
-        <div class="mockup-brand">🍰 Dulce Pasión</div>
-        <div class="mockup-links">
-          <span class="mockup-link">Tartas</span>
-          <span class="mockup-link">Cupcakes</span>
-          <span class="mockup-link">Galletas</span>
-          <span class="mockup-link">🛒 Carrito (0)</span>
-        </div>
-      </div>
-      <div class="mockup-hero">
-        <h2>La mejor pastelería artesanal</h2>
-        <p>Dulces recién horneados para endulzar tu día</p>
-      </div>
-      <div class="mockup-section">
-        <h3>Tartas</h3>
-        <div class="mockup-products">
-          <div class="mockup-product">
-            <div class="mockup-product-img" style="background:linear-gradient(135deg,#3d1a00,#8b4513)">🍫</div>
-            <div class="mockup-product-info">
-              <div class="mockup-product-name">Tarta de Chocolate</div>
-              <div class="mockup-product-price">€24.99</div>
-              <button class="mockup-product-btn">Añadir al carrito</button>
-            </div>
-          </div>
-          <div class="mockup-product">
-            <div class="mockup-product-img" style="background:linear-gradient(135deg,#8b0000,#ff6b6b)">🍓</div>
-            <div class="mockup-product-info">
-              <div class="mockup-product-name">Tarta de Fresa</div>
-              <div class="mockup-product-price">€22.99</div>
-              <button class="mockup-product-btn">Añadir al carrito</button>
-            </div>
-          </div>
-          <div class="mockup-product">
-            <div class="mockup-product-img" style="background:linear-gradient(135deg,#5d4037,#ff8f00)">🥕</div>
-            <div class="mockup-product-info">
-              <div class="mockup-product-name">Tarta de Zanahoria</div>
-              <div class="mockup-product-price">€21.99</div>
-              <button class="mockup-product-btn">Añadir al carrito</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <iframe class="browser-content" src="ecommerce-reposteria/index.html" title="Dulce Pasión demo"></iframe>
   </div>
 </section>
 
 <section class="project-info">
   <div class="info-block">
     <h3>Sobre el <em>proyecto</em></h3>
-    <p>Dulce Pasión es una tienda online de repostería artesanal desarrollada con HTML5, CSS3 y Bootstrap 5. Incluye un catálogo completo con tartas, cupcakes y galletas, sistema de carrito de compra y navegación fluida entre secciones.</p>
+    <p>Dulce Pasión es una tienda online de repostería artesanal con catálogo completo organizado en tartas, cupcakes y galletas. Utiliza Bootstrap 5 para garantizar un diseño responsive y un carrito de compra interactivo.</p>
   </div>
   <div class="info-block">
     <h3>Funciona<em>lidades</em></h3>
     <ul class="features">
-      <li>Catálogo con 3 categorías de productos</li>
-      <li>Carrito de compra dinámico</li>
-      <li>Navegación responsive con Bootstrap</li>
-      <li>Imágenes de productos reales de Unsplash</li>
-      <li>Diseño elegante con paleta de colores cálidos</li>
-      <li>Footer informativo y legal</li>
+      <li>→ Catálogo con 3 categorías de productos</li>
+      <li>→ Carrito de compra interactivo en tiempo real</li>
+      <li>→ Navegación responsive con Bootstrap 5</li>
+      <li>→ Diseño cálido orientado a conversión</li>
     </ul>
   </div>
 </section>
 
 <section class="tech-stack">
-  <div class="section-label">Tecnologías</div>
   <div class="tech-grid">
-    <div class="tech-cell">
-      <div class="tech-name">HTML5</div>
-      <div class="tech-desc">Estructura semántica</div>
-    </div>
-    <div class="tech-cell">
-      <div class="tech-name">CSS3</div>
-      <div class="tech-desc">Estilos personalizados</div>
-    </div>
-    <div class="tech-cell">
-      <div class="tech-name">Bootstrap 5</div>
-      <div class="tech-desc">Framework responsive</div>
-    </div>
-    <div class="tech-cell">
-      <div class="tech-name">JavaScript</div>
-      <div class="tech-desc">Carrito de compra</div>
-    </div>
+    <div class="tech-cell"><div class="tech-name">HTML5</div><div class="tech-desc">Estructura</div></div>
+    <div class="tech-cell"><div class="tech-name">CSS3</div><div class="tech-desc">Estilos a medida</div></div>
+    <div class="tech-cell"><div class="tech-name">Bootstrap 5</div><div class="tech-desc">Framework responsive</div></div>
+    <div class="tech-cell"><div class="tech-name">JavaScript</div><div class="tech-desc">Carrito de compra</div></div>
   </div>
 </section>
 

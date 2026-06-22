@@ -18,74 +18,96 @@
       --font-mono: 'DM Mono', monospace;
     }
     body { background: var(--bg); color: var(--text); font-family: var(--font-display); }
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 3rem; border-bottom: 0.5px solid var(--border); background: rgba(10,10,10,0.9); backdrop-filter: blur(16px); }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 3rem; border-bottom: 0.5px solid var(--border); background: rgba(10,10,10,0.92); backdrop-filter: blur(16px); }
     .nav-back { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; transition: color 0.2s; }
     .nav-back:hover { color: var(--accent); }
     .nav-logo { font-family: var(--font-serif); font-size: 1.2rem; font-weight: 300; color: var(--text); }
     .nav-logo span { color: var(--accent); font-style: italic; }
-    .project-hero { min-height: 60vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 8rem 3rem 4rem; background: linear-gradient(135deg, #0a0a0a 0%, #0a0a1a 100%); border-bottom: 0.5px solid var(--border); position: relative; overflow: hidden; }
-    .project-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 60% at 80% 40%, rgba(200,169,110,0.1) 0%, transparent 70%); }
-    .project-cat { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem; }
+    .project-hero { padding: 7rem 3rem 3rem; border-bottom: 0.5px solid var(--border); }
+    .project-cat { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem; }
     .project-cat::before { content: ''; display: block; width: 24px; height: 1px; background: var(--accent); }
-    .project-title { font-family: var(--font-serif); font-size: clamp(2.5rem, 6vw, 5.5rem); font-weight: 300; line-height: 0.95; margin-bottom: 1rem; }
+    .project-title { font-family: var(--font-serif); font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 300; line-height: 1; margin-bottom: 0.75rem; }
     .project-title em { font-style: italic; color: var(--accent); }
-    .project-desc { font-family: var(--font-serif); font-size: 1.2rem; font-weight: 300; color: var(--muted); max-width: 600px; line-height: 1.7; margin-bottom: 2rem; }
+    .project-desc { font-family: var(--font-serif); font-size: 1.05rem; font-weight: 300; color: var(--muted); max-width: 640px; line-height: 1.6; margin-bottom: 1.5rem; }
     .project-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-    .tag { font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); border: 0.5px solid rgba(200,169,110,0.4); background: rgba(200,169,110,0.08); padding: 0.35rem 0.8rem; border-radius: 100px; }
-    .project-preview { padding: 4rem 3rem; border-bottom: 0.5px solid var(--border); }
-    .section-label { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); display: flex; align-items: center; gap: 0.75rem; margin-bottom: 2rem; }
+    .tag { font-family: var(--font-mono); font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); border: 0.5px solid rgba(200,169,110,0.4); background: rgba(200,169,110,0.08); padding: 0.32rem 0.75rem; border-radius: 100px; }
+
+    /* AVISO SERVIDOR */
+    .server-notice {
+      margin: 3rem 3rem 0; padding: 1.25rem 1.5rem;
+      background: rgba(200,169,110,0.06); border: 0.5px solid rgba(200,169,110,0.25);
+      border-radius: 6px; display: flex; align-items: flex-start; gap: 1rem;
+    }
+    .server-notice-icon { color: var(--accent); font-family: var(--font-mono); font-size: 0.9rem; flex-shrink: 0; }
+    .server-notice-text { font-family: var(--font-mono); font-size: 0.66rem; line-height: 1.8; color: var(--muted); letter-spacing: 0.02em; }
+    .server-notice-text strong { color: var(--accent); }
+
+    .demo-section { padding: 3rem; }
+    .section-label { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem; }
     .section-label::before { content: ''; display: block; width: 24px; height: 1px; background: var(--accent); }
-    .browser-frame { background: var(--bg2); border: 0.5px solid var(--border2); border-radius: 8px; overflow: hidden; box-shadow: 0 40px 80px rgba(0,0,0,0.4); }
-    .browser-bar { background: var(--bg3); padding: 0.75rem 1rem; display: flex; align-items: center; gap: 0.5rem; border-bottom: 0.5px solid var(--border); }
-    .browser-dot { width: 10px; height: 10px; border-radius: 50%; }
-    .browser-dot:nth-child(1) { background: #ff5f57; }
-    .browser-dot:nth-child(2) { background: #febc2e; }
-    .browser-dot:nth-child(3) { background: #28c840; }
-    .browser-url { flex: 1; background: var(--bg); border-radius: 4px; padding: 0.3rem 0.75rem; margin: 0 0.5rem; font-family: var(--font-mono); font-size: 0.62rem; color: var(--muted); }
 
-    /* MOCKUP CINE */
-    .mockup { width: 100%; background: #0d0d0d; }
-    .mockup-nav { background: #111; padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #222; }
-    .mockup-brand { font-size: 1.2rem; color: #c8a96e; font-family: 'Syne', sans-serif; font-weight: 700; letter-spacing: 0.1em; }
-    .mockup-links { display: flex; gap: 1.5rem; }
-    .mockup-link { font-size: 0.72rem; color: rgba(255,255,255,0.5); font-family: 'Syne', sans-serif; }
-    .mockup-hero { position: relative; padding: 3rem 2rem; background: linear-gradient(to right, #0d0d0d, rgba(13,13,13,0.3)), url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=1200&q=60') center/cover; min-height: 200px; display: flex; align-items: center; }
-    .mockup-hero-text h2 { font-size: 1.8rem; color: white; font-family: 'Syne', sans-serif; margin-bottom: 0.5rem; }
-    .mockup-hero-text p { font-size: 0.85rem; color: rgba(255,255,255,0.6); font-family: 'Syne', sans-serif; }
-    .mockup-hero-btn { margin-top: 1rem; padding: 0.6rem 1.5rem; background: #c8a96e; color: #0d0d0d; border: none; border-radius: 4px; font-size: 0.8rem; font-family: 'Syne', sans-serif; font-weight: 700; cursor: pointer; }
-    .mockup-section { padding: 1.5rem 2rem; }
-    .mockup-section-title { font-size: 1rem; color: white; font-family: 'Syne', sans-serif; font-weight: 700; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
-    .mockup-section-title::before { content: ''; display: block; width: 3px; height: 16px; background: #c8a96e; }
-    .mockup-movies { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem; }
-    .mockup-movie { background: #1a1a1a; border-radius: 6px; overflow: hidden; border: 1px solid #222; }
-    .mockup-movie-poster { width: 100%; aspect-ratio: 2/3; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; }
-    .mockup-movie-info { padding: 0.6rem; }
-    .mockup-movie-title { font-size: 0.72rem; color: white; font-family: 'Syne', sans-serif; font-weight: 600; margin-bottom: 0.25rem; }
-    .mockup-movie-genre { font-size: 0.62rem; color: #c8a96e; font-family: 'Syne', sans-serif; margin-bottom: 0.4rem; }
-    .mockup-movie-btn { width: 100%; padding: 0.35rem; background: #c8a96e; color: #0d0d0d; border: none; border-radius: 3px; font-size: 0.62rem; font-family: 'Syne', sans-serif; font-weight: 700; }
+    /* CÓDIGO REAL */
+    .code-frame { background: var(--bg2); border: 0.5px solid var(--border2); border-radius: 10px; overflow: hidden; }
+    .code-bar { background: var(--bg3); padding: 0.75rem 1.25rem; display: flex; align-items: center; justify-content: space-between; border-bottom: 0.5px solid var(--border); }
+    .code-filename { font-family: var(--font-mono); font-size: 0.66rem; color: var(--muted); letter-spacing: 0.02em; }
+    .code-lang { font-family: var(--font-mono); font-size: 0.58rem; letter-spacing: 0.1em; color: var(--accent); text-transform: uppercase; }
 
-    .project-info { padding: 4rem 3rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; border-bottom: 0.5px solid var(--border); }
-    .info-block h3 { font-family: var(--font-serif); font-size: 1.8rem; font-weight: 300; margin-bottom: 1rem; }
+    /* RECREACIÓN INTERFAZ BOOTSTRAP REAL */
+    .aspx-window { background: #f8f9fa; font-family: 'Syne', sans-serif; }
+    .aspx-nav { background: #212529; padding: 0.85rem 1.5rem; display: flex; align-items: center; justify-content: space-between; }
+    .aspx-brand { color: white; font-weight: 700; font-size: 1rem; }
+    .aspx-links { display: flex; gap: 1.25rem; }
+    .aspx-link { color: rgba(255,255,255,0.65); font-size: 0.75rem; }
+    .aspx-link-active { color: white; }
+    .aspx-body { padding: 1.5rem; }
+    .aspx-title { font-size: 1.4rem; color: #212529; font-weight: 700; margin-bottom: 1.25rem; }
+    .aspx-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .aspx-card { background: white; border-radius: 6px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
+    .aspx-card-img { width: 100%; aspect-ratio: 16/10; background: #212529; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; }
+    .aspx-card-body { padding: 1rem; }
+    .aspx-card-title { font-size: 0.95rem; font-weight: 700; color: #212529; margin-bottom: 0.3rem; }
+    .aspx-card-text { font-size: 0.7rem; color: #6c757d; margin-bottom: 0.6rem; }
+    .aspx-card-list { font-size: 0.68rem; color: #495057; list-style: none; margin-bottom: 0.6rem; line-height: 1.6; }
+    .aspx-card-price { font-size: 0.85rem; font-weight: 700; color: #198754; }
+    .code-body { padding: 1.5rem; overflow-x: auto; }
+    .code-body pre { font-family: 'DM Mono', monospace; font-size: 0.72rem; line-height: 1.7; color: rgba(240,237,232,0.75); white-space: pre; }
+    .code-body .kw { color: #c792ea; }
+    .code-body .ty { color: #82aaff; }
+    .code-body .str { color: #c3e88d; }
+    .code-body .cm { color: rgba(240,237,232,0.35); font-style: italic; }
+    .code-body .an { color: #f78c6c; }
+
+    .code-tabs { display: flex; gap: 1px; background: var(--border); margin-bottom: 1px; }
+    .code-tab { flex: 1; padding: 0.6rem; text-align: center; background: var(--bg3); font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); cursor: pointer; transition: all 0.2s; }
+    .code-tab.active { color: var(--accent); background: var(--bg2); }
+
+    .project-info { padding: 3rem; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; border-top: 0.5px solid var(--border); }
+    .info-block h3 { font-family: var(--font-serif); font-size: 1.6rem; font-weight: 300; margin-bottom: 1rem; }
     .info-block h3 em { font-style: italic; color: var(--accent); }
-    .info-block p { font-family: var(--font-serif); font-size: 1.1rem; font-weight: 300; color: var(--muted); line-height: 1.8; }
-    .features { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
-    .features li { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.08em; color: var(--muted); padding: 0.75rem 1rem; background: var(--bg2); border-left: 2px solid var(--accent); display: flex; align-items: center; gap: 0.75rem; }
-    .features li::before { content: '→'; color: var(--accent); }
-    .tech-stack { padding: 4rem 3rem; border-bottom: 0.5px solid var(--border); }
-    .tech-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); margin-top: 2rem; }
-    .tech-cell { background: var(--bg2); padding: 2rem; text-align: center; }
-    .tech-name { font-family: var(--font-serif); font-size: 1.2rem; font-weight: 300; color: var(--accent); margin-bottom: 0.25rem; }
-    .tech-desc { font-family: var(--font-mono); font-size: 0.58rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
-    .project-nav { padding: 3rem; display: flex; justify-content: space-between; align-items: center; }
-    .project-nav a { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; transition: color 0.2s; }
+    .info-block p { font-family: var(--font-serif); font-size: 1.05rem; font-weight: 300; color: var(--muted); line-height: 1.8; }
+    .features { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+    .features li { font-family: var(--font-mono); font-size: 0.64rem; letter-spacing: 0.06em; color: var(--muted); padding: 0.65rem 0.9rem; background: var(--bg2); border-left: 2px solid var(--accent); }
+
+    .architecture { padding: 0 3rem 3rem; }
+    .arch-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); }
+    .arch-cell { background: var(--bg2); padding: 1.5rem; text-align: center; }
+    .arch-name { font-family: var(--font-serif); font-size: 1.1rem; font-weight: 300; color: var(--accent); }
+    .arch-desc { font-family: var(--font-mono); font-size: 0.56rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-top: 0.2rem; }
+
+    .project-nav { padding: 2rem 3rem 3rem; display: flex; justify-content: space-between; align-items: center; border-top: 0.5px solid var(--border); }
+    .project-nav a { font-family: var(--font-mono); font-size: 0.64rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
     .project-nav a:hover { color: var(--accent); }
+
     @media (max-width: 768px) {
       nav { padding: 1rem 1.5rem; }
-      .project-hero, .project-preview, .project-info, .tech-stack { padding: 4rem 1.5rem; }
-      .project-info { grid-template-columns: 1fr; gap: 2rem; }
-      .tech-grid { grid-template-columns: repeat(2, 1fr); }
-      .mockup-movies { grid-template-columns: repeat(2, 1fr); }
-      .project-nav { padding: 2rem 1.5rem; }
+      .project-hero { padding: 5rem 1.5rem 2rem; }
+      .server-notice { margin: 2rem 1.5rem 0; }
+      .demo-section, .architecture { padding: 2rem 1.5rem; }
+      .project-info { grid-template-columns: 1fr; gap: 1.5rem; padding: 2rem 1.5rem; }
+      .arch-grid { grid-template-columns: repeat(2, 1fr); }
+      .code-body { padding: 1rem; }
+      .code-body pre { font-size: 0.62rem; }
+      .project-nav { padding: 1.5rem; flex-direction: column; gap: 1rem; }
     }
   </style>
 </head>
@@ -97,82 +119,144 @@
 </nav>
 
 <section class="project-hero">
-  <div class="project-cat">ASP.NET MVC · Visual Studio</div>
+  <div class="project-cat">ASP.NET Core MVC · C#</div>
   <h1 class="project-title">Cine <em>Montecastelo</em></h1>
-  <p class="project-desc">Aplicación web de gestión de cine desarrollada en ASP.NET MVC con C#. Gestión completa de películas, sesiones, reservas y usuarios con Entity Framework.</p>
+  <p class="project-desc">Aplicación de gestión de cine desarrollada en ASP.NET Core MVC con C#. Cartelera pública, sistema de reservas, autenticación de usuarios y panel de administración con Entity Framework.</p>
   <div class="project-tags">
-    <span class="tag">ASP.NET MVC</span>
+    <span class="tag">ASP.NET Core MVC</span>
     <span class="tag">C#</span>
     <span class="tag">Entity Framework</span>
     <span class="tag">SQL Server</span>
-    <span class="tag">Bootstrap</span>
+    <span class="tag">Bootstrap 5</span>
     <span class="tag">Visual Studio</span>
   </div>
 </section>
 
-<section class="project-preview">
-  <div class="section-label">Vista previa</div>
-  <div class="browser-frame">
-    <div class="browser-bar">
-      <div class="browser-dot"></div>
-      <div class="browser-dot"></div>
-      <div class="browser-dot"></div>
-      <div class="browser-url">localhost:5000 — Cine Montecastelo</div>
+<div class="server-notice">
+  <span class="server-notice-icon">i</span>
+  <span class="server-notice-text">
+    Esta aplicación corre sobre <strong>ASP.NET Core con servidor backend y base de datos SQL Server</strong>, por lo que no puede ejecutarse directamente en GitHub Pages (solo aloja sitios estáticos). 
+    A continuación se muestra el <strong>código fuente real</strong> del proyecto: controladores, vistas Razor y la arquitectura MVC completa. 
+    El repositorio completo estará disponible próximamente en GitHub para clonar y ejecutar en local con Visual Studio.
+  </span>
+</div>
+
+<section class="demo-section">
+  <div class="section-label">Interfaz de la aplicación</div>
+  <div class="code-frame">
+    <div class="code-bar">
+      <span class="code-filename">localhost:5000/Peliculas/Cartelera</span>
+      <span class="code-lang">Razor Bootstrap</span>
     </div>
-    <div class="mockup">
-      <div class="mockup-nav">
-        <div class="mockup-brand">🎬 CINE MONTECASTELO</div>
-        <div class="mockup-links">
-          <span class="mockup-link">Cartelera</span>
-          <span class="mockup-link">Sesiones</span>
-          <span class="mockup-link">Reservas</span>
-          <span class="mockup-link">Admin</span>
+    <div class="aspx-window">
+      <div class="aspx-nav">
+        <div class="aspx-brand">Cine Montecastelo</div>
+        <div class="aspx-links">
+          <span class="aspx-link aspx-link-active">Cartelera</span>
+          <span class="aspx-link">Mis entradas</span>
+          <span class="aspx-link">Admin películas</span>
         </div>
       </div>
-      <div class="mockup-hero">
-        <div class="mockup-hero-text">
-          <h2>Cartelera esta semana</h2>
-          <p>Las mejores películas en Montecastelo</p>
-          <button class="mockup-hero-btn">Ver todas las sesiones</button>
+      <div class="aspx-body">
+        <h2 class="aspx-title">Cartelera</h2>
+        <div class="aspx-cards">
+          <div class="aspx-card">
+            <div class="aspx-card-img">🎬</div>
+            <div class="aspx-card-body">
+              <div class="aspx-card-title">Avengers: Endgame</div>
+              <div class="aspx-card-text">Marvel · Acción · 2019</div>
+              <ul class="aspx-card-list">
+                <li><strong>Género:</strong> Acción</li>
+                <li><strong>Duración:</strong> 181 min</li>
+                <li><strong>Salas:</strong> Sala 1, Sala 3</li>
+              </ul>
+              <div class="aspx-card-price">9.50 € / entrada</div>
+            </div>
+          </div>
+          <div class="aspx-card">
+            <div class="aspx-card-img">🎬</div>
+            <div class="aspx-card-body">
+              <div class="aspx-card-title">Dune: Parte 2</div>
+              <div class="aspx-card-text">Sci-Fi · 2024</div>
+              <ul class="aspx-card-list">
+                <li><strong>Género:</strong> Ciencia ficción</li>
+                <li><strong>Duración:</strong> 166 min</li>
+                <li><strong>Salas:</strong> Sala 2</li>
+              </ul>
+              <div class="aspx-card-price">8.90 € / entrada</div>
+            </div>
+          </div>
+          <div class="aspx-card">
+            <div class="aspx-card-img">🎬</div>
+            <div class="aspx-card-body">
+              <div class="aspx-card-title">Oppenheimer</div>
+              <div class="aspx-card-text">Drama · 2023</div>
+              <ul class="aspx-card-list">
+                <li><strong>Género:</strong> Drama histórico</li>
+                <li><strong>Duración:</strong> 180 min</li>
+                <li><strong>Salas:</strong> Sala 1</li>
+              </ul>
+              <div class="aspx-card-price">9.00 € / entrada</div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="mockup-section">
-        <div class="mockup-section-title">En cartelera</div>
-        <div class="mockup-movies">
-          <div class="mockup-movie">
-            <div class="mockup-movie-poster" style="background:linear-gradient(135deg,#1a1a2e,#16213e)">🦸</div>
-            <div class="mockup-movie-info">
-              <div class="mockup-movie-title">Avengers: Endgame</div>
-              <div class="mockup-movie-genre">Acción · 181 min</div>
-              <button class="mockup-movie-btn">Reservar</button>
-            </div>
-          </div>
-          <div class="mockup-movie">
-            <div class="mockup-movie-poster" style="background:linear-gradient(135deg,#2d1b00,#8b4513)">🧙</div>
-            <div class="mockup-movie-info">
-              <div class="mockup-movie-title">Dune: Parte 2</div>
-              <div class="mockup-movie-genre">Sci-Fi · 166 min</div>
-              <button class="mockup-movie-btn">Reservar</button>
-            </div>
-          </div>
-          <div class="mockup-movie">
-            <div class="mockup-movie-poster" style="background:linear-gradient(135deg,#0d1117,#1f6feb)">🤖</div>
-            <div class="mockup-movie-info">
-              <div class="mockup-movie-title">Oppenheimer</div>
-              <div class="mockup-movie-genre">Drama · 180 min</div>
-              <button class="mockup-movie-btn">Reservar</button>
-            </div>
-          </div>
-          <div class="mockup-movie">
-            <div class="mockup-movie-poster" style="background:linear-gradient(135deg,#1a0a0a,#8b0000)">👾</div>
-            <div class="mockup-movie-info">
-              <div class="mockup-movie-title">Alien: Romulus</div>
-              <div class="mockup-movie-genre">Terror · 119 min</div>
-              <button class="mockup-movie-btn">Reservar</button>
-            </div>
-          </div>
-        </div>
-      </div>
+    </div>
+  </div>
+</section>
+
+<section class="demo-section" style="padding-top:0">
+  <div class="section-label">Código fuente real</div>
+  <div class="code-frame">
+    <div class="code-tabs">
+      <div class="code-tab active">PeliculasController.cs</div>
+      <div class="code-tab">Cartelera.cshtml</div>
+    </div>
+    <div class="code-bar">
+      <span class="code-filename">Controllers/PeliculasController.cs</span>
+      <span class="code-lang">C#</span>
+    </div>
+    <div class="code-body">
+<pre><span class="kw">using</span> CineMontecasteloMvc.Managers.Interfaces;
+<span class="kw">using</span> CineMontecasteloMvc.Models;
+<span class="kw">using</span> Microsoft.AspNetCore.Authorization;
+<span class="kw">using</span> Microsoft.AspNetCore.Mvc;
+
+<span class="kw">namespace</span> CineMontecasteloMvc.Controllers
+{
+    <span class="kw">public class</span> <span class="ty">PeliculasController</span> : Controller
+    {
+        <span class="kw">private readonly</span> IPeliculaManager _peliculaManager;
+
+        <span class="kw">public</span> PeliculasController(IPeliculaManager peliculaManager)
+        {
+            _peliculaManager = peliculaManager;
+        }
+
+        <span class="cm">// Solo admin: listado de gestión</span>
+        <span class="an">[Authorize]</span>
+        <span class="kw">public</span> IActionResult Index()
+        {
+            <span class="kw">var</span> peliculas = _peliculaManager.GetAll();
+            <span class="kw">return</span> View(peliculas);
+        }
+
+        <span class="cm">// Vista pública: cartelera</span>
+        <span class="kw">public</span> IActionResult Cartelera()
+        {
+            <span class="kw">var</span> peliculas = _peliculaManager.GetCartelera();
+            <span class="kw">return</span> View(peliculas);
+        }
+
+        <span class="cm">// Detalles de una película</span>
+        <span class="kw">public</span> IActionResult Details(<span class="ty">int</span> id)
+        {
+            <span class="kw">var</span> pelicula = _peliculaManager.GetWithSalas(id);
+            <span class="kw">if</span> (pelicula == <span class="kw">null</span>) <span class="kw">return</span> NotFound();
+            <span class="kw">return</span> View(pelicula);
+        }
+    }
+}</pre>
     </div>
   </div>
 </section>
@@ -180,40 +264,28 @@
 <section class="project-info">
   <div class="info-block">
     <h3>Sobre el <em>proyecto</em></h3>
-    <p>Cine Montecastelo es una aplicación web completa desarrollada en ASP.NET MVC con C# en Visual Studio. Implementa el patrón MVC con Entity Framework para la gestión de la base de datos SQL Server, incluyendo autenticación de usuarios y panel de administración.</p>
+    <p>Cine Montecastelo aplica el patrón MVC completo: controladores que gestionan la lógica de negocio a través de una capa Manager con interfaces, vistas Razor (.cshtml) para la presentación, y Entity Framework para el acceso a la base de datos SQL Server.</p>
   </div>
   <div class="info-block">
     <h3>Funciona<em>lidades</em></h3>
     <ul class="features">
-      <li>CRUD completo de películas y sesiones</li>
-      <li>Sistema de reservas con selección de asientos</li>
-      <li>Autenticación y autorización de usuarios</li>
-      <li>Panel de administración completo</li>
-      <li>Entity Framework con SQL Server</li>
-      <li>Patrón MVC con Razor Views</li>
+      <li>→ CRUD completo de películas, salas y sesiones</li>
+      <li>→ Sistema de reservas con cesta de entradas</li>
+      <li>→ Autenticación y autorización con [Authorize]</li>
+      <li>→ Panel de administración solo para usuarios autenticados</li>
+      <li>→ Patrón Repository/Manager con inyección de dependencias</li>
+      <li>→ Entity Framework Core con SQL Server</li>
     </ul>
   </div>
 </section>
 
-<section class="tech-stack">
-  <div class="section-label">Tecnologías</div>
-  <div class="tech-grid">
-    <div class="tech-cell">
-      <div class="tech-name">ASP.NET MVC</div>
-      <div class="tech-desc">Framework web</div>
-    </div>
-    <div class="tech-cell">
-      <div class="tech-name">C#</div>
-      <div class="tech-desc">Lenguaje backend</div>
-    </div>
-    <div class="tech-cell">
-      <div class="tech-name">Entity Framework</div>
-      <div class="tech-desc">ORM base de datos</div>
-    </div>
-    <div class="tech-cell">
-      <div class="tech-name">SQL Server</div>
-      <div class="tech-desc">Base de datos</div>
-    </div>
+<section class="architecture">
+  <div class="section-label">Arquitectura</div>
+  <div class="arch-grid">
+    <div class="arch-cell"><div class="arch-name">Models</div><div class="arch-desc">Entidades de dominio</div></div>
+    <div class="arch-cell"><div class="arch-name">Controllers</div><div class="arch-desc">Lógica de peticiones</div></div>
+    <div class="arch-cell"><div class="arch-name">Views</div><div class="arch-desc">Razor (.cshtml)</div></div>
+    <div class="arch-cell"><div class="arch-name">Managers</div><div class="arch-desc">Capa de negocio</div></div>
   </div>
 </section>
 
